@@ -9,41 +9,40 @@ function storevalue(value){
 function getData(){
                 $.ajax({
                 type: "POST",
-                url: "http://172.20.10.12:8080/Example/Demo",
+                url: "http://localhost:8080/Example/Demo",
                 data: null,
                 cache: false,
                 success: function(result){
                 storevalue(JSON.parse(result));
+                load();
                 }
                 });
             }
+
+function load(){
+    document.getElementById("box_1").innerHTML = "NAME: " + myList[index].name;
+    document.getElementById("box_2").innerHTML = "NAME: " + myList[index+1].name;
+    document.getElementById("box_3").innerHTML = "NAME: " + myList[index+2].name;
+    document.getElementById("box_4").innerHTML = "NAME: " + myList[index+3].name;
+    document.getElementById("box_5").innerHTML = "NAME: " + myList[index+4].name;
+    document.getElementById("footertext").innerHTML = "Displaying results " + (index+1) + " to " + (index+5) +" , total results: " +total_results; 
+}
 
 function Previous(){
     if(index >4){
         index = index - 5;
     }
-    document.getElementById("box_1").innerHTML = "NAME: " + myList[index].name;
-    document.getElementById("box_2").innerHTML = "NAME: " + myList[index+1].name;
-    document.getElementById("box_3").innerHTML = "NAME: " + myList[index+2].name;
-    document.getElementById("box_4").innerHTML = "NAME: " + myList[index+3].name;
-    document.getElementById("box_5").innerHTML = "NAME: " + myList[index+4].name;
-    document.getElementById("footertext").innerHTML = "Displaying results " + (index+1) + " to " + (index+5) +" , total results: " +total_results; 
+   loadresults();
 }
 function Next(){
     if(index+5 < total_results){
         index = index +5;
     }
-    document.getElementById("box_1").innerHTML = "NAME: " + myList[index].name;
-    document.getElementById("box_2").innerHTML = "NAME: " + myList[index+1].name;
-    document.getElementById("box_3").innerHTML = "NAME: " + myList[index+2].name;
-    document.getElementById("box_4").innerHTML = "NAME: " + myList[index+3].name;
-    document.getElementById("box_5").innerHTML = "NAME: " + myList[index+4].name;
-    document.getElementById("footertext").innerHTML = "Displaying results " + (index+1) + " to " + (index+5) +" , total results: " +total_results; 
-
+    loadresults();
 }
 function buildHtmlTable(selector) {
     var columns = addAllColumnHeaders(myList, selector);
-
+ßß
     for (var i = 0 ; i < myList.length ; i++) {
         var row$ = $('<tr/>');
         for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {

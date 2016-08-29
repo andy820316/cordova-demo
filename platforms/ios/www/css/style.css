@@ -13,8 +13,9 @@
 div.blocks {
     font-size: 16px; font-size: 4vw;
     position:static;
+    background-color: AliceBlue;
     width: 100vw;
-    border: 25px solid blue;
+    border: 5px solid green;
     padding: 25px;
     margin: auto;
 }
@@ -24,9 +25,7 @@ body {
     padding-top: 20px;
     padding-bottom: 30px;
 }
-#container {
-  width:100%;
-}
+
 .footer {
     background-color: lightblue;
     position: fixed;
