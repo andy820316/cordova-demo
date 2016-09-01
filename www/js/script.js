@@ -1,20 +1,29 @@
-var myList = null;
+﻿var myList = null;
 var total_results = 0;
 var index = 0; 
 var tempindex = 0;
 var displaycount = 0;
 var MAXdisplaycount = 100;
+var session = null;
 function storevalue(value){
     myList = value;
     total_results = value.length;
+    sessionkey();
+}
+function sessionkey(){
+    session = window.localStorage.getItem("key");
+}
+function showkey(){
+
 }
 function getData(){
                 $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/Example/Demo",
+                url: "http://172.20.10.3:8080/Example/Demo",
                 data: null,
                 cache: false,
                 success: function(result){
+                result
                 storevalue(JSON.parse(result));
               //  loadresults();
                 test();
@@ -45,7 +54,7 @@ function test(){
         index++;
         tempindex = index-1;
     };
-    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results; 
+    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    key :   " + session;  
 }
 function remove(){
     while(displaycount > 0){

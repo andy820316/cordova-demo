@@ -1,4 +1,4 @@
-var myList = null;
+﻿var myList = null;
 var total_results = 0;
 var index = 0; 
 var tempindex = 0;

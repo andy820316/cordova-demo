@@ -1,9 +1,9 @@
-var myList = null;
+﻿var myList = null;
 var total_results = 0;
 var index = 0; 
 var tempindex = 0;
 var displaycount = 0;
-
+var MAXdisplaycount = 100;
 function storevalue(value){
     myList = value;
     total_results = value.length;
@@ -11,10 +11,11 @@ function storevalue(value){
 function getData(){
                 $.ajax({
                 type: "POST",
-                url: "http://172.20.10.12:8080/Example/Demo",
+                url: "http://172.20.10.3:8080/Example/Demo",
                 data: null,
                 cache: false,
                 success: function(result){
+                result
                 storevalue(JSON.parse(result));
               //  loadresults();
                 test();
@@ -22,7 +23,7 @@ function getData(){
                 });
             }
 
-function nodedat(currentdocument){
+function nodedata(currentdocument){
 
     for (var keys in myList[index]){
     var text = document.createTextNode(keys + " : " + myList[index][keys]);
@@ -33,11 +34,11 @@ function nodedat(currentdocument){
 }
 
 function test(){
-    while(index < total_results && displaycount < 5){ 
+    while(index < total_results && displaycount < MAXdisplaycount){ 
         var para = document.createElement("div");
-        para.className = "blocks";
+        para.className = "well";
         var name = 'result'+index;
-        nodedat(para);
+        nodedata(para);
         para.id = name;
         var results = document.getElementById("results");
         results.appendChild(para);
@@ -59,8 +60,8 @@ function remove(){
 }
 
 function Previous(){
-    if(index >5){
-        index = index - (5 + displaycount);
+    if(index >MAXdisplaycount){
+        index = index - (MAXdisplaycount + displaycount);
         remove();
         test();
     }
@@ -70,36 +71,4 @@ function Next(){
         remove();
         test();
     }
-}
-function buildHtmlTable(selector) {
-    var columns = addAllColumnHeaders(myList, selector);
-    for (var i = 0 ; i < myList.length ; i++) {
-        var row$ = $('<tr/>');
-        for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
-            var cellValue = myList[i][columns[colIndex]];
-
-            if (cellValue == null) { cellValue = ""; }
-
-            row$.append($('<td/>').html(cellValue));
-        }
-        $(selector).append(row$);
-    }
-};
-function addAllColumnHeaders(myList, selector)
-{
-    var columnSet = [];
-    var headerTr$ = $('<tr/>');
-
-    for (var i = 0 ; i < myList.length ; i++) {
-        var rowHash = myList[i];
-        for (var key in rowHash) {
-            if ($.inArray(key, columnSet) == -1){
-                columnSet.push(key);
-                headerTr$.append($('<th/>').html(key));
-            }
-        }
-    }
-    $(selector).append(headerTr$);
-
-    return columnSet;
 }
