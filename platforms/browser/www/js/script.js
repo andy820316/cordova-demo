@@ -14,7 +14,7 @@ function storevalue(value){
     sessionkey();
 }
 function sessionkey(){
-    session = window.localStorage.getItem("key");
+    session = sessionStorage.getItem("key");
 }
 function showkey(){
 
