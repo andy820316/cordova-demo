@@ -1,3 +1,9 @@
+var typeparam = $.url.param('type');
+var searchparam = $.url.param('search');
+var htitle = $.url.param('title');
+var sid = $.url.param('sid');
+
+
 $('.form_datetime').datetimepicker({
   //  language:  'zh-TW',
     weekStart: 1,
@@ -29,7 +35,28 @@ $('.form_time').datetimepicker({
 });
 
 
+if (typeparam.length){
+	$('#dtp_input0').val(typeparam);
+}
+if (searchparam.length){
+	if(searchparam == 'N000C') {
+		$('.groupitemCustom').each(function(){
+			$(this).show();});
+	} else {
+		$('.'+searchparam).each(function(){
+			$(this).show();});
+	}
+}
+if (sid.length){
+	$('#dtp_input10').val(sid);
+}
+
+
 //custom
 $("#dtp_confirm").bind("click",function(){
 	//
 });
+$("#dtp_cancel").bind("click",function(){
+	history.back();
+});
+

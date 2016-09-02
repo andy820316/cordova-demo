@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+		<meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+    	<link rel="stylesheet" href="css/style.css">
+    	
+    	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>	
+        
+    	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
+        
+        <title>Hello World</title>
+        <style> body{padding-top: 50vh; text-align: center;}</style>
+    </head>
+    <body>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<ul class="list-group">
+			  <li class="list-group-item"><a href="notifications.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">警報訊息搜尋</a></li>
+			  <li class="list-group-item"><a href="pipeInfo.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">充油電纜油壓即時資訊</a></li>
+			</ul>
+		</div>
+		
+    </body>
+</html>

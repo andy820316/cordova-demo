@@ -4,23 +4,44 @@ var index = 0;
 var tempindex = 0;
 var displaycount = 0;
 var MAXdisplaycount = 100;
+var session = null;
+const path = 'http://172.20.10.12:8080/Example/Query';
+//const path = 'http://172.20.10.3:8080/Example/Demo',
+
 function storevalue(value){
     myList = value;
     total_results = value.length;
+    sessionkey();
+}
+function sessionkey(){
+    session = window.localStorage.getItem("key");
+}
+function showkey(){
+
 }
 function getData(){
-                $.ajax({
-                type: "POST",
-                url: "http://localhost:8080/Example/Demo",
-                data: null,
-                cache: false,
-                success: function(result){
-                storevalue(JSON.parse(result));
-              //  loadresults();
-                test();
-                }
-                });
+    var allparams = $.url.paramAll();
+
+    var typeparam = $.url.param('type');
+    var selectparam = $.url.param('sid');
+    var jparams = JSON.stringify(allparams);
+    
+    var paramStr = "{'table':"+typeparam+"," +
+            "'selects':'"+selectparam+"'," +
+            "'conditions':"+jparams.toString()+"}";
+    
+    $.ajax({
+        url: path,
+        data: {"criteria":paramStr},
+        type: 'POST',
+        success: function(result){
+            storevalue(result);
+          //  loadresults();
+            test();
             }
+
+    });
+}
 
 function nodedata(currentdocument){
 
@@ -45,7 +66,7 @@ function test(){
         index++;
         tempindex = index-1;
     };
-    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results; 
+    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
 }
 function remove(){
     while(displaycount > 0){
