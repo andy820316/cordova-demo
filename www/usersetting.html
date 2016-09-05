@@ -1,44 +1,48 @@
 <html>
-	<head>
-		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-		<meta charset="UTF-8">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/style.css">
+        
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>   
+        <script src="bootstrap/js/bootstrap.min.js"></script>   
+        
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>使用者管理</title>
-        <style> body{padding-top: 20vh; text-align: center;}</style>
-	</head>
-	<body>
-    	<header class="bg-info navbar-fixed-top">
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </head>
+    <body>
+        <header class="bg-info navbar-fixed-top">
             <div class="navbar-header">
                 <a href="javascript:history.back()">
-                    <span class="btn widget btn-primary" name="btn_back">
+                    <span class="btn widget btn-primary">
                         <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
                     </span>
                 </a>
-                <label class="text-primary">Result Page</label>
+                <label class="text-primary">使用者管理</label>
             </div>
         </header>
-   		<div class="container-fluid" id="results">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<ul class="list-group">
-					  <li class="list-group-item"> <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#resetpass">更改密碼</button></li>
-
-					  <li class="list-group-item"><a onclick="logout()" class="btn btn-primary btn-lg queryPanelCustom" role="button">使用者登出</a></li>
-					</ul>
-				</div>
-			</div>
+        <div class="container-fluid" id="results">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <ul class="list-group">
+                      <li class="list-group-item"><a onclick="logout()" class="btn btn-primary btn-lg queryPanelCustom" role="button">使用者登出</a></li>
+                 
+                      <li class="list-group-item"> <a role="button" class="btn btn-primary btn-lg queryPanelCustom" data-toggle="modal" data-target="#resetpass">更改密碼</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="modal" id="resetpass" role="dialog">
             <div class="modal-dialog">
-      <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -55,12 +59,15 @@
                 <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" class="btn btn-default" onclick="resetpass()">確認</button>
-
                 </div>
+                </div>
+             </div>
         </div>
-      
-     </div>
-    </div>
-        <script type="text/javascript" src="cordova.js"></script>
+    <footer class="footer">
+    <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+    </footer>
+    
+    <script type="text/javascript" src="js/queryScript.js"></script>
+        
     </body>
 </html>

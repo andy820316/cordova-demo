@@ -1,31 +1,5 @@
-var modal = 0;
-var span =0;
-
-function testing(){
-  console.log("inside the function");
-  navigator.notification.confirm(
-    "Could you take a minute to rate my app?", // the message
-    function( index ) {
-        switch ( index ) {
-            case 1:
-                // The first button was pressed
-                break;
-            case 2:
-                // The second button was pressed
-                break;
-            case 3:
-                // The third button was pressed
-                break;
-        }
-    },
-    "Desperate for reviews",                   // a title
-    [ "Sure", "Remind me later", "NO! STOP!" ] // text of the buttons
-  );
-}
-
 function login(){
 console.log("logging in")
-testing();
 var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value;
 var username = document.getElementById('lg_username').value;
 		  $.ajax({
@@ -43,15 +17,16 @@ var username = document.getElementById('lg_username').value;
               }
             }
           });
-
 };
 function logout(){
-  if(navigator.notification.confirm('是否要登出？')){
+  navigator.notification.confirm(
+    '是否要登出？',
+    function(){
       window.location = "index.html";
       SessionStorage.clear;
-  }else{
-    //nothing
-  }
+    },
+    'Log Out?',
+    ['登出','取消']);
 }
 
 function resetpass(){
@@ -69,7 +44,7 @@ var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + s
               data: pass_stream,
               cache: false,
               success: function(result){
-                alert(result);
+                navigator.notification.alert(result);
                 return true;
               }
         });

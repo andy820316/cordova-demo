@@ -1,43 +1,53 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-		<meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
-    	<link rel="stylesheet" href="css/style.css">
-    	
-    	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>	
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+        <link rel="stylesheet" href="css/style.css">
         
-    	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>   
+        
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
-        
-        <title>Hello World</title>
-        <style> body{padding-top: 20vh; text-align: center;}</style>
+        <script type="text/javascript" src="js/login.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>選項目錄</title>
+        <style> body{padding-top: 20vh}</style>
     </head>
     <body>
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<ul class="list-group">
-			  <li class="list-group-item"><a href="notifications.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">警報訊息搜尋</a></li>
-			  <li class="list-group-item"><a href="pipeInfo.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">充油電纜油壓即時資訊</a></li>
-              <li class="list-group-item"><a href="pipeInfo.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">斷路器動作時間查詢</a></li>
-              <li class="list-group-item"><a href="pipeInfo.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">負載率查詢</a></li>
-              <li class="list-group-item"><a href="usersetting.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">使用者管理</a></li>
-			</ul>
-		</div>
-    </body>
+        <header class="bg-info navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="javascript:history.back()">
+                    <span class="btn widget btn-primary">
+                        <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
+                    </span>
+                </a>
+                <label class="text-primary">選項目錄</label>
+            </div>
+        </header>
+        <div class="container-fluid" id="results">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <ul class="list-group">
+                      <li class="list-group-item"><a href="notifications.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">警報訊息搜尋</a></li>
+                      <li class="list-group-item"><a href="pipeInfo.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">充油電纜油壓即時資訊</a></li>
+                      <li class="list-group-item"><a href="circuitBreaker.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">斷路器動作時間查詢</a></li>
+                      <li class="list-group-item"><a href="loadFactor.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">負載率查詢</a></li>
+                      <li class="list-group-item"><a href="usersetting.html" class="btn btn-primary btn-lg queryPanelCustom" role="button">使用者管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+             <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+        </footer>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        </body>
 </html>

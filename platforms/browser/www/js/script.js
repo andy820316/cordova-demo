@@ -6,7 +6,6 @@ var displaycount = 0;
 var MAXdisplaycount = 100;
 var session = null;
 const path = 'http://172.20.10.12:8080/Example/Query';
-//const path = 'http://172.20.10.3:8080/Example/Demo',
 
 function storevalue(value){
     myList = value;
@@ -36,7 +35,6 @@ function getData(){
         type: 'POST',
         success: function(result){
             storevalue(result);
-          //  loadresults();
             test();
             }
 
