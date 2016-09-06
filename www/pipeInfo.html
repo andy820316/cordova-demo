@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+    	<link rel="stylesheet" href="css/style.css">
+    	
+    	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>	
+        
+    	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
+        
+		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+	</head>
+	<body>
+    	<header class="bg-info navbar-fixed-top">
+        	<div class="navbar-header">
+            	<a href="javascript:history.back()">
+                	<span class="btn widget btn-primary">
+                    	<i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
+                	</span>
+            	</a>
+            	<label class="text-primary">充游電纜油壓即時資訊</label>
+        	</div>
+    	</header>
+        <div class="container-fluid" id="results">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<ul class="list-group">
+					  <li class="list-group-item"><a href="querytest.html?search=P000A&type=pipeinfo" class="btn btn-primary btn-lg queryPanelCustom" role="button">變電所名稱歷史查詢</a></li>
+					  <li class="list-group-item"><a href="querytest.html?search=P000B&type=pipeinfo" class="btn btn-primary btn-lg queryPanelCustom" role="button">線路名稱歷史查詢</a></li>
+					  <li class="list-group-item"><a href="querytest.html?search=P000C&type=pipeinfo" class="btn btn-primary btn-lg queryPanelCustom" role="button">全部線路即時查詢</a></li>
+					  <li class="list-group-item"><a href="querytest.html?search=P000D&type=pipeinfo" class="btn btn-primary btn-lg queryPanelCustom" role="button">異常線路即時查詢</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <footer class="footer">
+   	<div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+    </footer>
+    
+    <script type="text/javascript" src="js/queryScript.js"></script>
+        
+    </body>
+</html>

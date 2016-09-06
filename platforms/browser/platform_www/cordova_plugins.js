@@ -15,13 +15,31 @@ module.exports = [
         "merges": [
             "window.StatusBar"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/browser/notification.js",
+        "id": "cordova-plugin-dialogs.notification_browser",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-statusbar": "2.1.3"
+    "cordova-plugin-statusbar": "2.1.3",
+    "cordova-plugin-dialogs": "1.2.1",
+    "cordova-plugin-console": "1.0.3"
 }
 // BOTTOM OF METADATA
 });

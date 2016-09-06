@@ -12,6 +12,12 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "andy.cordova-test"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "andy.cordova-test"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "andy.cordova-test"
         }
     },
     "dependent_plugins": {}
