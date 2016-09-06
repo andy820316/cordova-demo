@@ -7,7 +7,7 @@ var MAXdisplaycount = 100;
 var viewId= '';
 var session = null;
 //const path = 'http://localhost:8080/ExampleModded/Query';
-const path = 'http://172.20.10.3:8080/Example/Demo';
+const path = 'http://172.20.10.3:8080/Example/Query';
 
 function storevalue(value){
     myList = value;
