@@ -5,9 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
         <link rel="stylesheet" href="css/style.css">
-        
+
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>   
         
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
@@ -15,14 +18,18 @@
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
 
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script> $(document).ready(function() {
+        $("body").css("display", "none");
+        $("body").fadeIn(20);
+        });
+        </script>
 
     </head>
     <body>
         <header class="bg-info navbar-fixed-top">
             <div class="navbar-header">
-                <a href="javascript:history.back()">
+                <a href="javascript:history.back()" data-transition="flip">
                     <span class="btn widget btn-primary">
                         <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
                     </span>
@@ -30,15 +37,12 @@
                 <label class="text-primary">使用者管理</label>
             </div>
         </header>
-        <div class="container-fluid" id="results">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <ul class="list-group">
-                      <li class="list-group-item"><a onclick="logout()" class="btn btn-primary btn-lg queryPanelCustom" role="button">使用者登出</a></li>
-                 
-                      <li class="list-group-item"> <a role="button" class="btn btn-primary btn-lg queryPanelCustom" data-toggle="modal" data-target="#resetpass">更改密碼</a></li>
-                    </ul>
-                </div>
+        <div class="map_container" id="results">
+            <div class="icon">
+                <div onclick="logout()" class="testblock" role="button">使用者登出</div>
+            </div>     
+            <div class="icon">
+                <div role="button" class=" testblock" data-toggle="modal" data-target="#resetpass">更改密碼</div>
             </div>
         </div>
         <div class="modal" id="resetpass" role="dialog">
@@ -68,6 +72,7 @@
     </footer>
     
     <script type="text/javascript" src="js/queryScript.js"></script>
-        
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/NativePageTransitionsKendoAdapter.js"></script>
     </body>
 </html>
