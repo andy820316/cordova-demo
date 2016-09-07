@@ -77,6 +77,9 @@ function remove(){
     }
 }
 
+function redirto(page){
+    window.plugins.nativepagetransitions.slide({"href" : page });
+}
 function Previous(){
     if(index >MAXdisplaycount){
         index = index - (MAXdisplaycount + displaycount);

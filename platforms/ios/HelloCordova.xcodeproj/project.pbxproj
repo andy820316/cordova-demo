@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -18,6 +17,8 @@
 		51B295CB81174EF08EBE942F /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C752A0D6A7543EA9277702A /* CDVStatusBar.m */; };
 		642C9731C30C41AA951D02D1 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 476A5F4390F44602875F0812 /* CDVNotification.bundle */; };
 		A54523D89D34432499A76458 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE25EE88D0F44F28C555423 /* CDVNotification.m */; };
+		BD3DA35F6CEF48CCA767B2ED /* NativePageTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC51AE9CCE45E9A2F67D77 /* NativePageTransitions.m */; };
+		050B455332AD4002BEBCB654 /* AppDelegate+nativepagetransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,10 @@
 		F18BD5C4B2CC46CD9E384C0B /* CDVNotification.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
 		F3C63D07ECD042E0A06C8F82 /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloCordova/config.xml; sourceTree = "<group>"; };
+		77EC51AE9CCE45E9A2F67D77 /* NativePageTransitions.m */ = {isa = PBXFileReference; name = "NativePageTransitions.m"; path = "com.telerik.plugins.nativepagetransitions/NativePageTransitions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.m"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		111A7CE56BB14C619B88F246 /* NativePageTransitions.h */ = {isa = PBXFileReference; name = "NativePageTransitions.h"; path = "com.telerik.plugins.nativepagetransitions/NativePageTransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		36933456633E47D2AC969876 /* AppDelegate+nativepagetransitions.h */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.h"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +181,10 @@
 				F18BD5C4B2CC46CD9E384C0B /* CDVNotification.h */,
 				F3C63D07ECD042E0A06C8F82 /* CDVLogger.m */,
 				7E879216A2D24D7BB61E3A4B /* CDVLogger.h */,
+				77EC51AE9CCE45E9A2F67D77 /* NativePageTransitions.m */,
+				AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */,
+				111A7CE56BB14C619B88F246 /* NativePageTransitions.h */,
+				36933456633E47D2AC969876 /* AppDelegate+nativepagetransitions.h */,
 			);
 			name = Plugins;
 			path = HelloCordova/Plugins;
@@ -299,6 +308,8 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				51B295CB81174EF08EBE942F /* CDVStatusBar.m in Sources */,
 				A54523D89D34432499A76458 /* CDVNotification.m in Sources */,
+				BD3DA35F6CEF48CCA767B2ED /* NativePageTransitions.m in Sources */,
+				050B455332AD4002BEBCB654 /* AppDelegate+nativepagetransitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

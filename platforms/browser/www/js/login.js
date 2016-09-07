@@ -22,8 +22,9 @@ function logout(){
   navigator.notification.confirm(
     '是否要登出？',
     function(){
-      window.location = "index.html";
-      SessionStorage.clear;
+
+    window.plugins.nativepagetransitions.slide({"href" : "index_mod.html"});      
+    SessionStorage.clear;
     },
     'Log Out?',
     ['登出','取消']);
