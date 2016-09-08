@@ -1,4 +1,3 @@
-
 div.blocks {
     font-size: 16px; font-size: 4vw;
     position:static;
@@ -29,13 +28,14 @@ body {
 }
 .querypanelCustom {
     width: 95%;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left:auto;
     margin-right:auto;
 }
 .groupitemCustom {
     margin-top: 10px;
     width: 100%;
+    display:none;
 }
 .footerCustom {
     text-align:center;
@@ -45,9 +45,71 @@ body {
 .inputTitleCustom{
     width:80px; 
 }
+.btn-sq-lg {
+  font-size: 150%;
+  width: 100% ;
+}
+.testcont{
+  width: 50%;
+  height: 100% ;
+
+}
 .buttonList {
     margin-top: 30px;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
+}
+
+#map_container {
+  width: 100%;
+}
+.testblock {
+  font-size: 150%;
+  white-space: normal;
+  text-align: center;
+  padding :20% 10% 20% 10%;
+  height: 100% ;
+  width: 100% ;
+  background: #bababa;
+  background-image: -webkit-linear-gradient(top, #bababa, #cdcfd1);
+  background-image: -moz-linear-gradient(top, #bababa, #cdcfd1);
+  background-image: -ms-linear-gradient(top, #bababa, #cdcfd1);
+  background-image: -o-linear-gradient(top, #bababa, #cdcfd1);
+  background-image: linear-gradient(to bottom, #bababa, #cdcfd1);
+
+}
+.icon{
+  float: left;
+  width: 50%;
+  height: 25%;
+}
+
+.testblock img{
+    width: 48px;
+    height: 48px;
+}
+.testblock:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+@media only screen and (orientation:landscape){
+    .icon{
+        float: left;
+        width: 25%;
+        height: 50%;
+    }
+    .testblock img{
+        width: 64px;
+        height: 64px;
+    }
+};
+
+.tableType1 {
+	width: 100%;
 }

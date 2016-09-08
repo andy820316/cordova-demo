@@ -31,6 +31,14 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+        "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+        "pluginId": "com.telerik.plugins.nativepagetransitions",
+        "clobbers": [
+            "window.plugins.nativepagetransitions"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -39,7 +47,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-console": "1.0.3"
+    "cordova-plugin-console": "1.0.3",
+    "com.telerik.plugins.nativepagetransitions": "0.6.5"
 }
 // BOTTOM OF METADATA
 });

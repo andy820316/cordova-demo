@@ -1,51 +1,59 @@
 <html>
-	<head>
-		<meta charset="UTF-8">
-    	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
-    	<link rel="stylesheet" href="css/style.css">
-    	
-    	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>	
-        
-    	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+
+        <script src="bootstrap/js/bootstrap.min.js"></script>   
+        <script type="text/javascript" src="js/script.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         
-		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 
-	</head>
-	<body>
-    	<header class="bg-info navbar-fixed-top">
-        	<div class="navbar-header">
-            	<a href="javascript:history.back()">
-                	<span class="btn widget btn-primary">
-                    	<i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
-                	</span>
-            	</a>
-            	<label class="text-primary">負載率查詢</label>
-        	</div>
-    	</header>
-        <div class="container-fluid" id="results">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<ul class="list-group">
-					  <li class="list-group-item"><a href="querytest.html?search=L000A&type=loadFactor" class="btn btn-primary btn-lg queryPanelCustom" role="button">線路負載率查詢</a></li>
-					  <li class="list-group-item"><a href="querytest.html?search=L000B&type=loadFactor" class="btn btn-primary btn-lg queryPanelCustom" role="button">變壓器負載率查詢</a></li>
-					  <li class="list-group-item"><a href="querytest.html?search=L000C&type=loadFactor" class="btn btn-primary btn-lg queryPanelCustom" role="button">昨日線路80%以上查詢</a></li>
-					  <li class="list-group-item"><a href="querytest.html?search=L000D&type=loadFactor" class="btn btn-primary btn-lg queryPanelCustom" role="button">昨日變壓器80%以上查詢</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+    </head>
+    <body>
+        <header class="bg-info navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="javascript:history.back()" data-transition="flip">
+                    <span class="btn widget btn-primary">
+                        <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirto('querytest.html?search=L000A&type=loadFactor')"></i>
+                    </span>
+                </a>
+                <label class="text-primary">負載率查詢</label>
+            </div>
+        </header>
+        <div id="map_container">
+            <div class="icon">
+                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000A&type=loadFactor')">線路負載率查詢</div>
+            </div>
+            <div class="icon">
+                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000B&type=loadFactor')">變壓器負載率查詢</div>
+                </div>
+            </div>
+            <div class="icon">
+                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000C&type=loadFactor')">昨日線路80%以上查詢</div>
+            </div>
+            <div class="icon">
+                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000D&type=loadFactor')">昨日變壓器80%以上查詢<div>
+            </div>
+        </div>  
+  
         <footer class="footer">
-   	    <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+        <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
         </footer>
 
+            
+  
     <script type="text/javascript" src="js/queryScript.js"></script>
-        
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/NativePageTransitionsKendoAdapter.js"></script>        
     </body>
 </html>

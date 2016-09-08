@@ -18,6 +18,9 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "andy.cordova-test"
+        },
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "andy.cordova-test"
         }
     },
     "dependent_plugins": {}
