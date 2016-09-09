@@ -14,20 +14,19 @@
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/jqurl.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
         
 	</head>
 	<body>
     	<header class="bg-info navbar-fixed-top">
         	<div class="navbar-header">
-            	<a href="javascript:history.back()">
-                	<span class="btn widget btn-primary" name="btn_back">
-                    	<i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
-                	</span>
-            	</a>
-            	<label class="text-primary" id="headerTitle"></label>
+                <span class="btn widget btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
+                </span>
         	</div>
     	</header>
-        <div class="container-fluid" id="results">
+    	        <div class="container-fluid" id="results">
 
 			<div class="panel panel-default querypanelCustom">
 			  <div class="panel-heading">
@@ -117,6 +116,7 @@
    	<div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
     </footer>
     <script type="text/javascript" src="js/queryScript.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
         
     </body>
 </html>
