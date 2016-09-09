@@ -115,6 +115,10 @@ function remove(){
 function redirto(page){
     window.plugins.nativepagetransitions.slide({"href" : page });
 }
+function redirback(){
+   window.plugins.nativepagetransitions.slide(history.back());
+
+}
 function Previous(){
     if(index >MAXdisplaycount){
         index = index - (MAXdisplaycount + displaycount);
