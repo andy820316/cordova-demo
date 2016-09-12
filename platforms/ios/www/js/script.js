@@ -6,14 +6,13 @@ var displaycount = 0;
 var MAXdisplaycount = 100;
 var viewId= '';
 var session = null;
-//const path = 'http://localhost:8080/ExampleModded/Query';
 const path = 'http://172.20.10.12:8080/Example/Query';
 
 function storevalue(value){
     myList = value;
     total_results = value.length;
     sessionkey();
-}
+};
 function sessionkey(){
     session = sessionStorage.getItem("key");
 }
@@ -56,8 +55,8 @@ function nodedata(currentdocument){
 }
 
 function nodeProcess() {
-	$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${訊息類型}</th></tr><tr><td>發生時間:</td><td>${發生時間}</td></tr><tr><td>位置:</td><td>${位置}</td></tr><tr><td>敘述:</td><td>${敘述}</td></tr></table>");
-	$.template('p001',"<table class='tableType1'><col width ='100'><tr><th >訊息類型:</th><th>todo</th></tr><tr><td>發生時間:</td><td>${rd_date}</td></tr><tr><td>rd_max_val:</td><td>${rd_max_val}</td></tr><tr><td>max_time:</td><td>${max_time}</td></tr><tr><td>rd_min_val:</td><td>${rd_min_val}</td></tr><tr><td>min_time:</td><td>${min_time}</td></tr></table>");
+	$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${messageType}</th></tr><tr><td>發生時間:</td><td>${ae_date}</td></tr><tr><td>位置:</td><td>${ae_grp_name}</td></tr><tr><td>敘述:</td><td>${ae_alm_text}</td></tr></table>");
+	$.template('p001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th>todo</th></tr><tr><td>發生時間:</td><td>${rd_date}</td></tr><tr><td>rd_max_val:</td><td>${rd_max_val}</td></tr><tr><td>max_time:</td><td>${max_time}</td></tr><tr><td>rd_min_val:</td><td>${rd_min_val}</td></tr><tr><td>min_time:</td><td>${min_time}</td></tr></table>");
 	
 	
 	
@@ -117,7 +116,6 @@ function redirto(page){
 }
 function redirback(){
    window.plugins.nativepagetransitions.slide(history.back());
-
 }
 function Previous(){
     if(index >MAXdisplaycount){

@@ -2,6 +2,7 @@ var typeparam = $.url.param('type');
 var searchparam = $.url.param('search');
 var htitle = $.url.param('title');
 var sid = $.url.param('sid');
+var keycount = 0;
 
 $('.form_datetime').datetimepicker({
   //  language:  'zh-TW',
@@ -61,3 +62,17 @@ $("#dtp_cancel").bind("click",function(){
 	history.back();
 });
 
+function keywordAdd(el){
+	keycount = keycount+1;
+	var parent = $(el).parent().parent();
+	var cloneEl = parent.clone();
+
+	cloneEl.find('[name^=keyword]')[0].value = "";
+	cloneEl.find('[name^=keyword]')[0].name = "keyword"+keycount;
+	$(cloneEl).appendTo(parent.parent());
+}
+
+function keywordRemove(el){
+	var prevNode = $(el).parent().parent().prev()[0];
+	if($(prevNode).is('div')) $(el).parent().parent().remove();
+}
