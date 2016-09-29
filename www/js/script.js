@@ -21,6 +21,10 @@ function showkey(){
 }
 function getData(){
     var allparams = $.url.paramAll();
+    
+    $.each(allparams, function(k,v){
+    	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
+    });
     allparams.region = decodeURIComponent(allparams.region);
     allparams.location = decodeURIComponent(allparams.location);
     var typeparam = $.url.param('type');
