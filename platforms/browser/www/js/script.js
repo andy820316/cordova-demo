@@ -21,7 +21,8 @@ function showkey(){
 }
 function getData(){
     var allparams = $.url.paramAll();
-
+    allparams.region = decodeURIComponent(allparams.region);
+    allparams.location = decodeURIComponent(allparams.location);
     var typeparam = $.url.param('type');
     var selectparam = $.url.param('sid');
     var jparams = JSON.stringify(allparams);
@@ -55,9 +56,10 @@ function nodedata(currentdocument){
 }
 
 function nodeProcess() {
-	$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${messageType}</th></tr><tr><td>發生時間:</td><td>${ae_date}</td></tr><tr><td>位置:</td><td>${ae_grp_name}</td></tr><tr><td>敘述:</td><td>${ae_alm_text}</td></tr></table>");
-	$.template('p001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th>todo</th></tr><tr><td>發生時間:</td><td>${rd_date}</td></tr><tr><td>rd_max_val:</td><td>${rd_max_val}</td></tr><tr><td>max_time:</td><td>${max_time}</td></tr><tr><td>rd_min_val:</td><td>${rd_min_val}</td></tr><tr><td>min_time:</td><td>${min_time}</td></tr></table>");
-	
+    $.template('n001',"<table class='tableType1'><col width ='120'><tr><th>訊息類型 : </th><th>${message_type}</th></tr><tr><td>發生時間 : </td><td>${ae_date}</td></tr><tr><td>位置 : </td><td>${ae_grp_name}</td></tr><tr><td>電壓等級 : </td><td>${voltage}</td></tr><tr><td>設備 : </td><td>${equipment}</td></tr><tr><td>敘述 : </td><td>${ae_alm_text}</td></tr></table>");
+    //$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${messageType}</th></tr><tr><td>發生時間:</td><td>${ae_date}</td></tr><tr><td>位置:</td><td>${ae_grp_name}</td></tr><tr><td>敘述:</td><td>${ae_alm_text}</td></tr></table>");
+    $.template('p001',"<table class='tableType1'><col width ='120'><tr><th>${Message}</th></tr><tr><td>設備編號 :</td><td>${equipment}</td></tr><tr><td>日期時間 : </td><td>${Date}</td></tr><tr><td> 運轉值: </td><td><font colot = '${color}'>${value}</font> bar </td></tr><tr><td>基準值上限/下限 : </td><td>${upper} / ${lower} </td></tr></table>");
+    $.template('c001',"<table class='tableType1'><col width ='120'><tr><th>變電所/裝置 : </th><th>${Place}</th></tr><tr><td>日期時間 : </td><td>${Date}</td></tr><tr><td>類型 : </td><td>${Type}</td></tr><tr><td>動作時間 : </td><td><font color ='${color}'>${dur} ms</font></td></tr><tr><td>基準值/偏差值 : </td><td>${base} ms/<font color ='${color}'> ${bias} ms</font></td></tr></table>");
 	
 	
 	var tnodes = $.tmpl(viewId,myList);
