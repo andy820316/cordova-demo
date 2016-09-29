@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.demo.Munky;
+package com.demo.cross;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
