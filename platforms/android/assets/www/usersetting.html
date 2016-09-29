@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>   
+        
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
+        <script> $(document).ready(function() {
+        $("body").css("display", "none");
+        $("body").fadeIn(20);
+        });
+        </script>
+
+    </head>
+    <body>
+        <header class="bg-info navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="javascript:history.back()" data-transition="flip">
+                    <span class="btn widget btn-primary">
+                        <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
+                    </span>
+                </a>
+                <label class="text-primary">使用者管理</label>
+            </div>
+        </header>
+        <div class="map_container" id="results">
+            <div class="icon">
+                <div onclick="logout()" class="testblock" role="button">使用者登出</div>
+            </div>     
+            <div class="icon">
+                <div role="button" class=" testblock" data-toggle="modal" data-target="#resetpass">更改密碼</div>
+            </div>
+        </div>
+        <div class="modal" id="resetpass" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">更改密碼</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label>舊密碼</label>
+                        <input id="oldpass"></input><br>
+                        <label>新密碼</label>
+                        <input id="newpass"></input><br>
+                        <label>確認密碼</label>
+                        <input id="confirmation"></input><br>
+                    </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-default" onclick="resetpass()">確認</button>
+                </div>
+                </div>
+             </div>
+        </div>
+    <footer class="footer">
+    <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+    </footer>
+    
+    <script type="text/javascript" src="js/queryScript.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/NativePageTransitionsKendoAdapter.js"></script>
+    </body>
+</html>

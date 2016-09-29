@@ -4,6 +4,8 @@ var htitle = $.url.param('title');
 var sid = $.url.param('sid');
 var keycount = 0;
 
+var selects;
+
 $('.form_datetime').datetimepicker({
   //  language:  'zh-TW',
     weekStart: 1,
@@ -61,6 +63,82 @@ $("#dtp_confirm").bind("click",function(){
 $("#dtp_cancel").bind("click",function(){
 	history.back();
 });
+$("[name^=region]").bind("change",function(){
+	$('[name=location]').val(-1);
+	$('[name=location]').children().each(function(){
+		if (this.value !== '-1') this.remove();
+	});
+	updateLocList(this.value);
+});
+
+//
+
+$(window).bind("load",function(){
+	init();
+});
+
+function init(){
+	menuUpdate();
+}
+
+function menuUpdate(){
+	var paramStr = "{table:'qm'}";
+	
+    $.ajax({
+        url: path,
+        data: {"criteria":paramStr},
+        type: 'POST',
+        success: function(result){
+        	selects = result;
+        	var keys = Object.keys(selects);
+        	
+        	for (var key in keys) {
+        		if (keys[key] !== 'location') {
+	        		var values = selects[keys[key]];
+	        		for (var value in values){
+	        			var opt = document.createElement('option');
+	        			var optj = JSON.parse(JSON.stringify(values[value]));
+	        			$.each(optj,function(key,value){
+		        			opt.value = value;
+		        			opt.innerHTML = key;
+	        			});
+	            		$(opt).appendTo($('[name='+keys[key]+']'));
+	        		}
+        		
+        		}
+        	}
+        }
+
+    });
+	
+}
+
+function updateLocList(selected) {
+	var locs = selects.location;
+	
+	if (locs) {
+		for (var loc in locs) {
+			Object.keys(locs[loc]).forEach(function(key){
+				
+				if (key === selected) {
+					var opts = locs[loc][key];
+					for (var opt in opts){
+						if (opt){
+		        			var optit = document.createElement('option');
+		        			var optj = opts[opt][0];
+		        			$.each(optj,function(key,value){
+			        			optit.value = value;
+			        			optit.innerHTML = key;
+		        			});
+		        			if (typeof optj != 'undefined')
+		            		$(optit).appendTo($('[name=location]'));
+						}
+					}
+				}
+			});
+		}
+	}
+}
 
 function keywordAdd(el){
 	keycount = keycount+1;
