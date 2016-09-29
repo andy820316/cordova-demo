@@ -8,19 +8,19 @@
     },
     "installed_plugins": {
         "com.telerik.plugins.nativepagetransitions": {
-            "PACKAGE_NAME": "com.demo.Munky"
+            "PACKAGE_NAME": "com.demo.cross"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.demo.Munky"
+            "PACKAGE_NAME": "com.demo.cross"
         },
         "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.demo.Munky"
+            "PACKAGE_NAME": "com.demo.cross"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.demo.Munky"
+            "PACKAGE_NAME": "com.demo.cross"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.demo.Munky"
+            "PACKAGE_NAME": "com.demo.cross"
         }
     },
     "dependent_plugins": {}
