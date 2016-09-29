@@ -99,7 +99,7 @@ function menuUpdate(){
 	        			var opt = document.createElement('option');
 	        			var optj = JSON.parse(JSON.stringify(values[value]));
 	        			$.each(optj,function(key,value){
-		        			opt.value = value;
+		        			opt.value = encodeURIComponent(value);
 		        			opt.innerHTML = key;
 	        			});
 	            		$(opt).appendTo($('[name='+keys[key]+']'));
@@ -120,14 +120,14 @@ function updateLocList(selected) {
 		for (var loc in locs) {
 			Object.keys(locs[loc]).forEach(function(key){
 				
-				if (key === selected) {
+				if (encodeURIComponent(key) === selected) {
 					var opts = locs[loc][key];
 					for (var opt in opts){
 						if (opt){
 		        			var optit = document.createElement('option');
 		        			var optj = opts[opt][0];
 		        			$.each(optj,function(key,value){
-			        			optit.value = value;
+			        			optit.value = encodeURIComponent(value);
 			        			optit.innerHTML = key;
 		        			});
 		        			if (typeof optj != 'undefined')
