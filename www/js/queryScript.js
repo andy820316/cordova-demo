@@ -58,6 +58,11 @@ if (sid.length){
 
 //custom
 $("#dtp_confirm").bind("click",function(){
+
+	$('[name^=keyword]').each(function(){
+		$(this).val(encodeURIComponent(this.value));
+	});
+	
 	//
 });
 $("#dtp_cancel").bind("click",function(){
