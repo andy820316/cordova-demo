@@ -95,11 +95,14 @@ function menuUpdate(){
         type: 'POST',
         success: function(result){
         	selects = result;
-        	var keys = Object.keys(selects);
         	
+        	var keys = Object.keys(selects);
         	for (var key in keys) {
         		if (keys[key] !== 'location') {
+        			
 	        		var values = selects[keys[key]];
+	        		
+	        		
 	        		for (var value in values){
 	        			var opt = document.createElement('option');
 	        			var optj = JSON.parse(JSON.stringify(values[value]));
@@ -115,7 +118,9 @@ function menuUpdate(){
         }
 
     });
-	
+
+    $('[name=region]').val('');
+    $('[name=location]').val('');
 }
 
 function updateLocList(selected) {
