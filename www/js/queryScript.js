@@ -66,6 +66,7 @@ $("#dtp_confirm").bind("click",function(){
 	//
 });
 $("#dtp_cancel").bind("click",function(){
+	console.log("cancel clicked");
 	history.back();
 });
 $("[name^=region]").bind("change",function(){
@@ -87,7 +88,7 @@ function init(){
 }
 
 function menuUpdate(){
-	var paramStr = "{table:'qm'}";
+	var paramStr = "{table:'qm',system_region:'"+sysregion+"'}";
 	
     $.ajax({
         url: path,

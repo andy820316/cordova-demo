@@ -12,19 +12,19 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
         <script type="text/javascript" src="js/jqurl.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
 
 	</head>
 	<body onload="getData()" >
-    	<header class="bg-info navbar-fixed-top">
-        	<div class="navbar-header">
-            	<a href="javascript:history.back()">
-                	<span class="btn widget btn-primary" name="btn_back">
-                    	<i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
-                	</span>
-            	</a>
-            	<label class="text-primary">Result Page</label>
-        	</div>
-    	</header>
+        <header class="bg-info navbar-fixed-top">
+            <div class="navbar-header">
+                <span class="btn widget btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
+                </span>
+                <label class="text-primary">result page</label>
+            </div>
+        </header>
         <div class="container-fluid" id = "results">
 		</div>
         <footer class="footer">
@@ -32,5 +32,6 @@
         <result class="results" id = "footertext"></result>
         <button type="button" class="btn btn-primary pull-right" onclick ="Next()" > > </button>
     </footer>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

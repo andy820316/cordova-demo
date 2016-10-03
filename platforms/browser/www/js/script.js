@@ -6,7 +6,8 @@ var displaycount = 0;
 var MAXdisplaycount = 100;
 var viewId= '';
 var session = null;
-const path = 'http://172.20.10.12:8080/Example/Query';
+var sysregion = '台中';
+const path = 'http://localhost:8080/Example/Query';
 
 function storevalue(value){
     myList = value;
@@ -16,11 +17,14 @@ function storevalue(value){
 function sessionkey(){
     session = sessionStorage.getItem("key");
 }
-function showkey(){
 
-}
 function getData(){
     var allparams = $.url.paramAll();
+
+    $.each(allparams, function(k,v){
+    	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
+    });
+
     allparams.region = decodeURIComponent(allparams.region);
     allparams.location = decodeURIComponent(allparams.location);
     var typeparam = $.url.param('type');
@@ -29,7 +33,8 @@ function getData(){
     
     var paramStr = "{'table':"+typeparam+"," +
             "'selects':'"+selectparam+"'," +
-            "'conditions':"+jparams.toString()+"}";
+            "'conditions':"+jparams.toString()+","+
+            "'system_region':" + sysregion + "}";
     
     if (selectparam.length) viewId = selectparam;
     
@@ -78,7 +83,11 @@ function nodeProcess() {
         index++;
         tempindex = index-1;
     };
-	
+	if(total_results == 0){
+        var results = document.getElementById("results");
+        results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
+    }
+
     document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
 }
 

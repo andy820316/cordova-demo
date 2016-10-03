@@ -58,9 +58,15 @@ if (sid.length){
 
 //custom
 $("#dtp_confirm").bind("click",function(){
+
+	$('[name^=keyword]').each(function(){
+		$(this).val(encodeURIComponent(this.value));
+	});
+	
 	//
 });
 $("#dtp_cancel").bind("click",function(){
+	console.log("cancel clicked");
 	history.back();
 });
 $("[name^=region]").bind("change",function(){
@@ -82,7 +88,7 @@ function init(){
 }
 
 function menuUpdate(){
-	var paramStr = "{table:'qm'}";
+	var paramStr = "{table:'qm',region:'嘉南'}";
 	
     $.ajax({
         url: path,
