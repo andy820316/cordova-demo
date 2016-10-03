@@ -69,9 +69,9 @@ $("#dtp_cancel").bind("click",function(){
 	history.back();
 });
 $("[name^=region]").bind("change",function(){
-	$('[name=location]').val(-1);
+	$('[name=location]').val('');
 	$('[name=location]').children().each(function(){
-		if (this.value !== '-1') this.remove();
+		if (this.value !== '') this.remove();
 	});
 	updateLocList(this.value);
 });
