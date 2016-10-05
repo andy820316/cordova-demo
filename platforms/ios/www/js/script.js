@@ -16,11 +16,14 @@ function storevalue(value){
 function sessionkey(){
     session = sessionStorage.getItem("key");
 }
-function showkey(){
 
-}
 function getData(){
     var allparams = $.url.paramAll();
+
+    $.each(allparams, function(k,v){
+    	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
+    });
+
     allparams.region = decodeURIComponent(allparams.region);
     allparams.location = decodeURIComponent(allparams.location);
     var typeparam = $.url.param('type');
@@ -29,7 +32,8 @@ function getData(){
     
     var paramStr = "{'table':"+typeparam+"," +
             "'selects':'"+selectparam+"'," +
-            "'conditions':"+jparams.toString()+"}";
+            "'conditions':"+jparams.toString()+","+
+            "'region':" + "嘉南" + "}";
     
     if (selectparam.length) viewId = selectparam;
     
@@ -78,7 +82,11 @@ function nodeProcess() {
         index++;
         tempindex = index-1;
     };
-	
+	if(total_results == 0){
+        var results = document.getElementById("results");
+        results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
+    }
+
     document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
 }
 
