@@ -84,6 +84,7 @@ $(window).bind("load",function(){
 });
 
 function init(){
+	$("#sysRegion").html(sysregion);
 	menuUpdate();
 }
 
