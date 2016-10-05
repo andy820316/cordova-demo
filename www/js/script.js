@@ -118,10 +118,18 @@ function remove(){
 }
 
 function redirto(page){
-    window.plugins.nativepagetransitions.slide({"href" : page });
+	try{
+		window.plugins.nativepagetransitions.slide({"href" : page });
+	} catch(err) {
+		window.location = page;
+	}
 }
 function redirback(){
-   window.plugins.nativepagetransitions.slide(history.back());
+	try{
+		window.plugins.nativepagetransitions.slide(history.back());
+	} catch(err) {
+		history.back();
+	}
 }
 function Previous(){
     if(index >MAXdisplaycount){
