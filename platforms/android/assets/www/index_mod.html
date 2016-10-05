@@ -23,11 +23,9 @@
     <body>
         <header class="bg-info navbar-fixed-top">
             <div class="navbar-header">
-                <a href="javascript:history.back()" data-transition="slide">
-                    <span class="btn widget btn-primary">
-                        <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
-                    </span>
-                </a>
+                <span class="btn widget btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
+                </span>
                 <label class="text-primary">選項目錄</label>
             </div>
         </header>
@@ -57,6 +55,5 @@
         </footer>
     <script type="text/javascript" src="js/queryScript.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/NativePageTransitionsKendoAdapter.js"></script>
     </body>
 </html>

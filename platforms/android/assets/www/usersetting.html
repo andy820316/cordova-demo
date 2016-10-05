@@ -17,23 +17,14 @@
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
-
         <script type="text/javascript" src="js/index.js"></script>
-        <script> $(document).ready(function() {
-        $("body").css("display", "none");
-        $("body").fadeIn(20);
-        });
-        </script>
-
     </head>
     <body>
         <header class="bg-info navbar-fixed-top">
             <div class="navbar-header">
-                <a href="javascript:history.back()" data-transition="flip">
-                    <span class="btn widget btn-primary">
-                        <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>
-                    </span>
-                </a>
+                <span class="btn widget btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
+                </span>
                 <label class="text-primary">使用者管理</label>
             </div>
         </header>
@@ -73,6 +64,5 @@
     
     <script type="text/javascript" src="js/queryScript.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/NativePageTransitionsKendoAdapter.js"></script>
     </body>
 </html>

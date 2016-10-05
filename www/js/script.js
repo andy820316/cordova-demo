@@ -6,7 +6,8 @@ var displaycount = 0;
 var MAXdisplaycount = 100;
 var viewId= '';
 var session = null;
-const path = 'http://172.20.10.12:8080/Example/Query';
+var sysregion = '嘉南';
+const path = 'http://localhost:8080/Example/Query';
 
 function storevalue(value){
     myList = value;
@@ -16,15 +17,14 @@ function storevalue(value){
 function sessionkey(){
     session = sessionStorage.getItem("key");
 }
-function showkey(){
 
-}
 function getData(){
     var allparams = $.url.paramAll();
-    
+
     $.each(allparams, function(k,v){
     	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
     });
+
     allparams.region = decodeURIComponent(allparams.region);
     allparams.location = decodeURIComponent(allparams.location);
     var typeparam = $.url.param('type');
@@ -33,7 +33,8 @@ function getData(){
     
     var paramStr = "{'table':"+typeparam+"," +
             "'selects':'"+selectparam+"'," +
-            "'conditions':"+jparams.toString()+"}";
+            "'conditions':"+jparams.toString()+","+
+            "'system_region':" + sysregion + "}";
     
     if (selectparam.length) viewId = selectparam;
     
@@ -43,7 +44,7 @@ function getData(){
         type: 'POST',
         success: function(result){
             storevalue(result);
-            test();
+            nodeProcess();
         }
 
     });
@@ -82,30 +83,13 @@ function nodeProcess() {
         index++;
         tempindex = index-1;
     };
-	
+	if(total_results == 0){
+        var results = document.getElementById("results");
+        results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
+    }
+
     document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
 }
-
-function test(){
-	nodeProcess();
-}
-
-//function test(){
-//	while(index < total_results && displaycount < MAXdisplaycount){ 
-//        var para = document.createElement("div");
-//        para.className = "well";
-//        var name = 'result'+index;
-//        nodedata(para);
-//        para.id = name;
-//        var results = document.getElementById("results");
-//        results.appendChild(para);
-//        displaycount++;
-//        index++;
-//        tempindex = index-1;
-//    };
-//    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
-//}
-
 function remove(){
     while(displaycount > 0){
         console.log(tempindex);
@@ -135,12 +119,12 @@ function Previous(){
     if(index >MAXdisplaycount){
         index = index - (MAXdisplaycount + displaycount);
         remove();
-        test();
+        nodeProcess();
     }
 }
 function Next(){
     if(index < total_results){
         remove();
-        test();
+        nodeProcess();
     }
 }
