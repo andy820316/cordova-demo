@@ -8,25 +8,37 @@ var selects;
 
 
 $(function () {
+
+	$("#dtp_input2").bind("click",function(){
+		$(this).next().click();
+	});
     $('#datetimepicker1').datetimepicker({
     	format: 'YYYY-MM-DD',
     	showClose: true,
-        toolbarPlacement: 'bottom'
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true
     });
-    $('#datetimepicker2').datetimepicker({
+    
+	$("#dtp_input4").bind("click",function(){
+		$(this).next().click();
+	});
+	$('#datetimepicker2').datetimepicker({
     	format: 'YYYY-MM-DD',
     	showClose: true,
-        toolbarPlacement: 'bottom' 
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true
     });
 	$('#dtp_input3').datetimepicker({
         format: 'HH:mm',
         showClose: true,
-        toolbarPlacement: 'bottom'
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true
     });
     $('#dtp_input5').datetimepicker({
         format: 'HH:mm',
         showClose: true,
-        toolbarPlacement: 'bottom'
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true
     });
 });
 
