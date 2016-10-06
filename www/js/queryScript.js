@@ -28,12 +28,14 @@ $(function () {
         toolbarPlacement: 'bottom',
         ignoreReadonly: true
     });
+	
 	$('#dtp_input3').datetimepicker({
         format: 'HH:mm',
         showClose: true,
         toolbarPlacement: 'bottom',
         ignoreReadonly: true
     });
+	
     $('#dtp_input5').datetimepicker({
         format: 'HH:mm',
         showClose: true,
