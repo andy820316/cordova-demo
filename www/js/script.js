@@ -6,7 +6,7 @@ var displaycount = 0;
 var MAXdisplaycount = 100;
 var viewId= '';
 var session = null;
-var sysregion = '嘉南';
+var sysregion = '台北';
 const path = 'http://localhost:8080/Example/Query';
 
 function storevalue(value){
