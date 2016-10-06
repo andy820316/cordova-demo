@@ -6,37 +6,29 @@ var keycount = 0;
 
 var selects;
 
-$('.form_datetime').datetimepicker({
-  //  language:  'zh-TW',
-    weekStart: 1,
-    todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 2,
-	forceParse: 0,
-    showMeridian: 1
-});
-$('.form_date').datetimepicker({
-    weekStart: 1,
-    todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 2,
-	minView: 2,
-	forceParse: 0
-});
-$('.form_time').datetimepicker({
 
-	weekStart: 1,
-	todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 0,
-	minView: 0,
-	maxView: 0,
-	forceParse: 0        	
+$(function () {
+    $('#datetimepicker1').datetimepicker({
+    	format: 'YYYY-MM-DD',
+    	showClose: true,
+        toolbarPlacement: 'bottom'
+    });
+    $('#datetimepicker2').datetimepicker({
+    	format: 'YYYY-MM-DD',
+    	showClose: true,
+        toolbarPlacement: 'bottom' 
+    });
+	$('#dtp_input3').datetimepicker({
+        format: 'HH:mm',
+        showClose: true,
+        toolbarPlacement: 'bottom'
+    });
+    $('#dtp_input5').datetimepicker({
+        format: 'HH:mm',
+        showClose: true,
+        toolbarPlacement: 'bottom'
+    });
 });
-
 
 if (typeparam.length){
 	$('#dtp_input0').val(typeparam);
@@ -84,6 +76,7 @@ $(window).bind("load",function(){
 });
 
 function init(){
+	$("#sysRegion").html(sysregion);
 	menuUpdate();
 }
 
