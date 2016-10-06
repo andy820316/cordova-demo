@@ -16,7 +16,8 @@ $(function () {
     	format: 'YYYY-MM-DD',
     	showClose: true,
         toolbarPlacement: 'bottom',
-        ignoreReadonly: true
+        ignoreReadonly: true,
+        focusOnShow: false
     });
     
 	$("#dtp_input4").bind("click",function(){
@@ -26,21 +27,24 @@ $(function () {
     	format: 'YYYY-MM-DD',
     	showClose: true,
         toolbarPlacement: 'bottom',
-        ignoreReadonly: true
+        ignoreReadonly: true,
+        focusOnShow: false
     });
 	
 	$('#dtp_input3').datetimepicker({
         format: 'HH:mm',
         showClose: true,
         toolbarPlacement: 'bottom',
-        ignoreReadonly: true
+        ignoreReadonly: true,
+        focusOnShow: false
     });
 	
     $('#dtp_input5').datetimepicker({
         format: 'HH:mm',
         showClose: true,
         toolbarPlacement: 'bottom',
-        ignoreReadonly: true
+        ignoreReadonly: true,
+        focusOnShow: false
     });
 });
 
