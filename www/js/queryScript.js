@@ -94,8 +94,41 @@ $(window).bind("load",function(){
 });
 
 function init(){
+	updateSysRegion();
 	$("#sysRegion").html(sysregion);
 	menuUpdate();
+}
+
+function updateSysRegion(){
+	var def = sessionStorage.getItem("sys_region");
+	
+	if (def) {
+		sysregion = def;
+	} else {
+		var user = sessionStorage.getItem("key");
+		var p = "{userName:"+user+",req:'district'}";
+		$.ajax({
+		  type: "POST",
+		  url: curpath+"User",
+		  data: {userinfo:p},
+		  cache: false,
+		  success: function(result){
+			var selects = result;
+	      	var keys = Object.keys(result);
+	      	for (var key in keys){
+	    		if (keys[key] !== 'dist') {
+	        		var values = selects[keys[key]];
+	        		for (var value in values){
+	        			$.each(function(){
+	        				sysregion = values[0];
+	        			});
+	        		}
+	    		}
+	      	} 
+		  }
+		});	
+		
+	}
 }
 
 function menuUpdate(){
