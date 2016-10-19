@@ -11,12 +11,12 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>	
         
     	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    	
+        <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/jqurl.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
-
-        
 	</head>
 	<body>
     	<header class="bg-info navbar-fixed-top">
@@ -30,44 +30,54 @@
 
 			<div class="panel panel-default querypanelCustom">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">設定搜尋條件</h3>
+			    <h3 class="panel-title">設定搜尋條件 - <span id="sysRegion"></span></h3>
 			  </div>
 			  
 			<div>
 			    <form action="result.html" class="form-horizontal"  role="form">
 			        <fieldset>
-					<div class="input-group groupitemCustom N000D">
-						<label for="dtp_input2" class="col-md-2 control-label">日期起</label>
-						<div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-							<input class="form-control" size="16" type="text" value="" readonly>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-						</div>
-						<input type="hidden" name="startdate" id="dtp_input2" value="" /><br/>
-					</div>
-					<div class="input-group groupitemCustom N000D">
+
+		            <div class="input-group groupitemCustom N000D">
+		                <label for="dtp_input2" class="col-md-2 control-label">日期起</label>
+				        <div class='input-group date form_time col-md-5' id='datetimepicker1'>
+		                    <input type='text' name="startdate" id="dtp_input2" class="form-control" readonly="true" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+		                
+		            <div class="input-group groupitemCustom N000D">
 		                <label for="dtp_input3" class="col-md-2 control-label">時間起</label>
-		                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-		                    <input class="form-control" size="16" type="text" value="" readonly>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+		                <div class='input-group date form_time col-md-5' id='datetimepicker3'>
+		                    <input type='text' name="starttime" id="dtp_input3" class="form-control" readonly="true" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-time"></span>
+		                    </span>
 		                </div>
-						<input type="hidden" name="starttime" id="dtp_input3" value="" /><br/>
-					</div>
-					<div class="input-group groupitemCustom N000D">
-						<label for="dtp_input4" class="col-md-2 control-label">日期迄</label>
-						<div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input4" data-link-format="yyyy-mm-dd">
-							<input class="form-control" size="16" type="text" value="" readonly>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-						</div>
-						<input type="hidden" name="enddate" id="dtp_input4" value="" /><br/>
-					</div>
-					<div class="input-group groupitemCustom N000D">
+		            </div>
+
+
+		            <div class="input-group groupitemCustom N000D">
+		                <label for="dtp_input4" class="col-md-2 control-label">日期迄</label>
+				        <div class='input-group date form_time col-md-5' id='datetimepicker2'>
+		                    <input type='text' name="enddate" id="dtp_input4" class="form-control" readonly="true" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+					
+		            <div class="input-group groupitemCustom N000D">
 		                <label for="dtp_input5" class="col-md-2 control-label">時間迄</label>
-		                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="dtp_input5" data-link-format="hh:ii">
-		                    <input class="form-control" size="16" type="text" value="" readonly>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+		                <div class='input-group date form_time col-md-5' id='datetimepicker5'>
+		                    <input type='text' name="endtime" id="dtp_input5" class="form-control" readonly="true" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-time"></span>
+		                    </span>
 		                </div>
-						<input type="hidden" name="endtime" id="dtp_input5" value="" /><br/>
-					</div>
+		            </div>
+					
 					<div class="input-group groupitemCustom N000A N000B C000A N000E">
 		                <label for="dtp_input5" class="col-md-2 control-label">轄區</label>
 		                <div class="input-group col-md-5" >
@@ -120,6 +130,7 @@
 					
 			        </fieldset>
 			    </form>
+			    
 			</div>
 
 			</div>
@@ -127,6 +138,7 @@
     <footer class="footer">
    	<div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
     </footer>
+    
     <script type="text/javascript" src="js/queryScript.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
         

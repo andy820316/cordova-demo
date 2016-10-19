@@ -1,13 +1,14 @@
-﻿var myList = null;
+var myList = null;
 var total_results = 0;
 var index = 0; 
 var tempindex = 0;
 var displaycount = 0;
-var MAXdisplaycount = 100;
+var MAXdisplaycount = 10;
 var viewId= '';
 var session = null;
-var sysregion = '台北';
-const path = 'http://localhost:8080/Example/Query';
+var sysregion = '嘉南';
+//const path = 'http://localhost:8080/Example/Demo';
+const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
 
 function storevalue(value){
     myList = value;
@@ -20,7 +21,7 @@ function sessionkey(){
 
 function getData(){
     var allparams = $.url.paramAll();
-
+    updateSysRegion()
     $.each(allparams, function(k,v){
     	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
     });
@@ -32,7 +33,7 @@ function getData(){
     var jparams = JSON.stringify(allparams);
     
     var paramStr = "{'table':"+typeparam+"," +
-            "'selects':'"+selectparam+"'," +
+            "'selects':"+selectparam+"," +
             "'conditions':"+jparams.toString()+","+
             "'system_region':" + sysregion + "}";
     
@@ -63,7 +64,7 @@ function nodedata(currentdocument){
 function nodeProcess() {
     $.template('n001',"<table class='tableType1'><col width ='120'><tr><th>訊息類型 : </th><th>${message_type}</th></tr><tr><td>發生時間 : </td><td>${ae_date}</td></tr><tr><td>位置 : </td><td>${ae_grp_name}</td></tr><tr><td>電壓等級 : </td><td>${voltage}</td></tr><tr><td>設備 : </td><td>${equipment}</td></tr><tr><td>敘述 : </td><td>${ae_alm_text}</td></tr></table>");
     //$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${messageType}</th></tr><tr><td>發生時間:</td><td>${ae_date}</td></tr><tr><td>位置:</td><td>${ae_grp_name}</td></tr><tr><td>敘述:</td><td>${ae_alm_text}</td></tr></table>");
-    $.template('p001',"<table class='tableType1'><col width ='120'><tr><th>${Message}</th></tr><tr><td>設備編號 :</td><td>${equipment}</td></tr><tr><td>日期時間 : </td><td>${Date}</td></tr><tr><td> 運轉值: </td><td><font colot = '${color}'>${value}</font> bar </td></tr><tr><td>基準值上限/下限 : </td><td>${upper} / ${lower} </td></tr></table>");
+    $.template('p001',"<table class='tableType1'><col width ='130'><tr><th>${title} </th><th>${equipment}</th></tr><tr><td>設備編號 :</td><td>${equipment}</td></tr><tr><td>日期時間 : </td><td>${timeDate}</td></tr><tr><td> 運轉值: </td><td><font color = '${color}'>${value}</font></td></tr><tr><td> 狀態: </td><td><font color = '${color}'>${status}</font></td></tr><tr><td>基準值上限/下限 : </td><td>${max} / ${min} </td></tr></table>");
     $.template('c001',"<table class='tableType1'><col width ='120'><tr><th>變電所/裝置 : </th><th>${Place}</th></tr><tr><td>日期時間 : </td><td>${Date}</td></tr><tr><td>類型 : </td><td>${Type}</td></tr><tr><td>動作時間 : </td><td><font color ='${color}'>${dur} ms</font></td></tr><tr><td>基準值/偏差值 : </td><td>${base} ms/<font color ='${color}'> ${bias} ms</font></td></tr></table>");
 	
 	
@@ -102,10 +103,19 @@ function remove(){
 }
 
 function redirto(page){
-    window.plugins.nativepagetransitions.slide({"href" : page });
+	try{
+        console.log(navigator.oscpu);
+		window.plugins.nativepagetransitions.slide({"href" : page });
+	} catch(err) {
+		window.location = page;
+	}
 }
 function redirback(){
-   window.plugins.nativepagetransitions.slide(history.back());
+	try{
+		window.plugins.nativepagetransitions.slide(history.back());
+	} catch(err) {
+		history.back();
+	}
 }
 function Previous(){
     if(index >MAXdisplaycount){
@@ -118,5 +128,12 @@ function Next(){
     if(index < total_results){
         remove();
         nodeProcess();
+    }
+}
+function updateSysRegion(){
+    var def = sessionStorage.getItem("sys_region");
+    
+    if (def) {
+        sysregion = def;
     }
 }

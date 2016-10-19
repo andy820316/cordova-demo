@@ -39,6 +39,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.nativepagetransitions"
         ]
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -48,7 +56,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-dialogs": "1.2.1",
     "cordova-plugin-console": "1.0.3",
-    "com.telerik.plugins.nativepagetransitions": "0.6.5"
+    "com.telerik.plugins.nativepagetransitions": "0.6.5",
+    "cordova-plugin-device": "1.1.3"
 };
 // BOTTOM OF METADATA
 });

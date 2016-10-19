@@ -31,6 +31,14 @@ module.exports = [
         "clobbers": [
             "window.StatusBar"
         ]
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -40,7 +48,8 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.3",
     "cordova-plugin-dialogs": "1.2.1",
     "cordova-plugin-statusbar": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-device": "1.1.3"
 };
 // BOTTOM OF METADATA
 });

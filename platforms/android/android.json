@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -43,6 +47,9 @@
             "PACKAGE_NAME": "com.demo.cross"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.demo.cross"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.demo.cross"
         }
     },
@@ -79,6 +86,14 @@
             "clobbers": [
                 "window.StatusBar"
             ]
+        },
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -86,6 +101,7 @@
         "cordova-plugin-console": "1.0.3",
         "cordova-plugin-dialogs": "1.2.1",
         "cordova-plugin-statusbar": "2.1.3",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-device": "1.1.3"
     }
 }
