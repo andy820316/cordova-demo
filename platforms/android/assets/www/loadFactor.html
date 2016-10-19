@@ -7,12 +7,13 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
 
         <script src="bootstrap/js/bootstrap.min.js"></script>   
         <script type="text/javascript" src="js/script.js"></script>
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         
@@ -28,7 +29,7 @@
                 <label class="text-primary">負載率查詢</label>
             </div>
         </header>
-        <div id="map_container">
+        <div id="map_container" id = "results">
             <div class="icon">
                 <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000A&type=loadFactor')">線路負載率查詢</div>
             </div>
@@ -40,16 +41,12 @@
                 <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000C&type=loadFactor')">昨日線路80%以上查詢</div>
             </div>
             <div class="icon">
-                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000D&type=loadFactor')">昨日變壓器80%以上查詢<div>
+                <div class ="testblock" role="button" onclick="redirto('querytest.html?search=L000D&type=loadFactor')">昨日變壓器80%以上查詢</div>
             </div>
         </div>  
-  
         <footer class="footer">
-        <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
-        </footer>
-
-            
-  
+           <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
+        </footer> 
     <script type="text/javascript" src="js/queryScript.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     </body>

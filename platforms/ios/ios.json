@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"NativePageTransitions\"><param name=\"ios-package\" value=\"NativePageTransitions\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -52,6 +56,9 @@
         },
         "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "andy.cordova-test"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.demo.cross"
         }
     },
     "dependent_plugins": {},
@@ -95,6 +102,14 @@
             "clobbers": [
                 "window.plugins.nativepagetransitions"
             ]
+        },
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -102,6 +117,7 @@
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-dialogs": "1.2.1",
         "cordova-plugin-console": "1.0.3",
-        "com.telerik.plugins.nativepagetransitions": "0.6.5"
+        "com.telerik.plugins.nativepagetransitions": "0.6.5",
+        "cordova-plugin-device": "1.1.3"
     }
 }

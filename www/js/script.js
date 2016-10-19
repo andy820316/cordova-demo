@@ -6,7 +6,7 @@ var displaycount = 0;
 var MAXdisplaycount = 10;
 var viewId= '';
 var session = null;
-var sysregion = '台北';
+var sysregion = '嘉南';
 //const path = 'http://localhost:8080/Example/Demo';
 const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
 
@@ -21,6 +21,7 @@ function sessionkey(){
 
 function getData(){
     var allparams = $.url.paramAll();
+    updateSysRegion()
     $.each(allparams, function(k,v){
     	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
     });
@@ -127,5 +128,12 @@ function Next(){
     if(index < total_results){
         remove();
         nodeProcess();
+    }
+}
+function updateSysRegion(){
+    var def = sessionStorage.getItem("sys_region");
+    
+    if (def) {
+        sysregion = def;
     }
 }

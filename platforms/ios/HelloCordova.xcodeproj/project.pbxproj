@@ -19,6 +19,7 @@
 		A54523D89D34432499A76458 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE25EE88D0F44F28C555423 /* CDVNotification.m */; };
 		BD3DA35F6CEF48CCA767B2ED /* NativePageTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC51AE9CCE45E9A2F67D77 /* NativePageTransitions.m */; };
 		050B455332AD4002BEBCB654 /* AppDelegate+nativepagetransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */; };
+		FF0A86DAC50C4741AE562960 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 026D59A2C23F415BA2F89C17 /* CDVDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.m"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		111A7CE56BB14C619B88F246 /* NativePageTransitions.h */ = {isa = PBXFileReference; name = "NativePageTransitions.h"; path = "com.telerik.plugins.nativepagetransitions/NativePageTransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		36933456633E47D2AC969876 /* AppDelegate+nativepagetransitions.h */ = {isa = PBXFileReference; name = "AppDelegate+nativepagetransitions.h"; path = "com.telerik.plugins.nativepagetransitions/AppDelegate+nativepagetransitions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		026D59A2C23F415BA2F89C17 /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6141F20A677F435BBDDC914C /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				AC023D2ECAAB4B10BB128948 /* AppDelegate+nativepagetransitions.m */,
 				111A7CE56BB14C619B88F246 /* NativePageTransitions.h */,
 				36933456633E47D2AC969876 /* AppDelegate+nativepagetransitions.h */,
+				026D59A2C23F415BA2F89C17 /* CDVDevice.m */,
+				6141F20A677F435BBDDC914C /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = HelloCordova/Plugins;
@@ -310,6 +315,7 @@
 				A54523D89D34432499A76458 /* CDVNotification.m in Sources */,
 				BD3DA35F6CEF48CCA767B2ED /* NativePageTransitions.m in Sources */,
 				050B455332AD4002BEBCB654 /* AppDelegate+nativepagetransitions.m in Sources */,
+				FF0A86DAC50C4741AE562960 /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
