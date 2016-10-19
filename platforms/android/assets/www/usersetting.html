@@ -35,6 +35,9 @@
             <div class="icon">
                 <div role="button" class=" testblock" data-toggle="modal" data-target="#resetpass">更改密碼</div>
             </div>
+            <div class="icon">
+                <div role="button" class=" testblock" data-toggle="modal" data-target="#modRegion">變更供電區</div>
+            </div>
         </div>
         <div class="modal" id="resetpass" role="dialog">
             <div class="modal-dialog">
@@ -58,11 +61,44 @@
                 </div>
              </div>
         </div>
+        
+        <div class="modal" id="modRegion" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">變更預設供電區</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label for="curRegion">預設供電區</label>
+                        <div id="curRegion"></div><br>
+                        <div class="form-group">
+	                        <label for="newRegion">新設供電區</label>
+	                        <select class="form-control" name="region" id="newRegion">
+	                        	<option value=''>請選供電區</option>
+	                        	<option value='台中'>台中</option>
+	                        	<option value='台北'>台北</option>
+	                        	<option value='嘉南'>嘉南</option>
+	                        	<option value='新桃'>新桃</option>
+	                        	<option value='測試'>測試</option>
+	                        	<option value='花東'>花東</option>
+	                        	<option value='高屏'>高屏</option>
+							</select>
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="saveCurRegion()">確認</button>
+                </div>
+                </div>
+             </div>
+        </div>
+        
     <footer class="footer">
     <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
     </footer>
     
-    <script type="text/javascript" src="js/queryScript.js"></script>
+    <script type="text/javascript" src="js/usersetting.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

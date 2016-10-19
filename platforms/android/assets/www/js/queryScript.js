@@ -6,37 +6,47 @@ var keycount = 0;
 
 var selects;
 
-$('.form_datetime').datetimepicker({
-  //  language:  'zh-TW',
-    weekStart: 1,
-    todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 2,
-	forceParse: 0,
-    showMeridian: 1
-});
-$('.form_date').datetimepicker({
-    weekStart: 1,
-    todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 2,
-	minView: 2,
-	forceParse: 0
-});
-$('.form_time').datetimepicker({
 
-	weekStart: 1,
-	todayBtn:  1,
-	autoclose: 1,
-	todayHighlight: 1,
-	startView: 0,
-	minView: 0,
-	maxView: 0,
-	forceParse: 0        	
-});
+$(function () {
 
+	$("#dtp_input2").bind("click",function(){
+		$(this).next().click();
+	});
+    $('#datetimepicker1').datetimepicker({
+    	format: 'YYYY-MM-DD',
+    	showClose: true,
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true,
+        focusOnShow: false
+    });
+    
+	$("#dtp_input4").bind("click",function(){
+		$(this).next().click();
+	});
+	$('#datetimepicker2').datetimepicker({
+    	format: 'YYYY-MM-DD',
+    	showClose: true,
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true,
+        focusOnShow: false
+    });
+	
+	$('#dtp_input3').datetimepicker({
+        format: 'HH:mm',
+        showClose: true,
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true,
+        focusOnShow: false
+    });
+	
+    $('#dtp_input5').datetimepicker({
+        format: 'HH:mm',
+        showClose: true,
+        toolbarPlacement: 'bottom',
+        ignoreReadonly: true,
+        focusOnShow: false
+    });
+});
 
 if (typeparam.length){
 	$('#dtp_input0').val(typeparam);
@@ -66,12 +76,13 @@ $("#dtp_confirm").bind("click",function(){
 	//
 });
 $("#dtp_cancel").bind("click",function(){
-	redirback();
+	console.log("cancel clicked");
+	history.back();
 });
 $("[name^=region]").bind("change",function(){
-	$('[name=location]').val(-1);
+	$('[name=location]').val('');
 	$('[name=location]').children().each(function(){
-		if (this.value !== '-1') this.remove();
+		if (this.value !== '') this.remove();
 	});
 	updateLocList(this.value);
 });
@@ -83,11 +94,21 @@ $(window).bind("load",function(){
 });
 
 function init(){
+	updateSysRegion();
+	$("#sysRegion").html(sysregion);
 	menuUpdate();
 }
 
+function updateSysRegion(){
+	var def = sessionStorage.getItem("sys_region");
+	
+	if (def) {
+		sysregion = def;
+	}
+}
+
 function menuUpdate(){
-	var paramStr = "{table:'qm'}";
+	var paramStr = "{table:'qm',system_region:'"+sysregion+"'}";
 	
     $.ajax({
         url: path,
@@ -95,11 +116,14 @@ function menuUpdate(){
         type: 'POST',
         success: function(result){
         	selects = result;
-        	var keys = Object.keys(selects);
         	
+        	var keys = Object.keys(selects);
         	for (var key in keys) {
         		if (keys[key] !== 'location') {
+        			
 	        		var values = selects[keys[key]];
+	        		
+	        		
 	        		for (var value in values){
 	        			var opt = document.createElement('option');
 	        			var optj = JSON.parse(JSON.stringify(values[value]));
@@ -115,7 +139,9 @@ function menuUpdate(){
         }
 
     });
-	
+
+    $('[name=region]').val('');
+    $('[name=location]').val('');
 }
 
 function updateLocList(selected) {

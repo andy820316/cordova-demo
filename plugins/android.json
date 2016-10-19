@@ -21,6 +21,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.demo.cross"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.demo.cross"
         }
     },
     "dependent_plugins": {}

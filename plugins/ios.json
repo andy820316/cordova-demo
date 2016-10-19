@@ -21,6 +21,9 @@
         },
         "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "andy.cordova-test"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.demo.cross"
         }
     },
     "dependent_plugins": {}
