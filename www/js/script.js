@@ -9,6 +9,9 @@ var session = null;
 var sysregion = '嘉南';
 //const path = 'http://localhost:8080/Example/Demo';
 const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
+//const path = 'http://localhost:8080/Example/Query';
+
+var did="";
 
 function storevalue(value){
     myList = value;
@@ -41,7 +44,7 @@ function getData(){
     
     $.ajax({
         url: path,
-        data: {"criteria":paramStr},
+        data: {"criteria":paramStr,"did":did},
         type: 'POST',
         success: function(result){
             storevalue(result);
@@ -137,3 +140,4 @@ function updateSysRegion(){
         sysregion = def;
     }
 }
+

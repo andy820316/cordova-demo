@@ -3,6 +3,7 @@ var searchparam = $.url.param('search');
 var htitle = $.url.param('title');
 var sid = $.url.param('sid');
 var keycount = 0;
+var did="";
 
 var selects;
 
@@ -87,14 +88,24 @@ $("[name^=region]").bind("change",function(){
 	updateLocList(this.value);
 });
 
-//
+//$(window).bind("load",function(){
+//	init();
+//});
 
-$(window).bind("load",function(){
+$(document).bind("deviceready", onDeviceReady);
+
+function onDeviceReady() {
 	init();
-});
+}	
 
 function init(){
 	updateSysRegion();
+
+	try{
+		console.log(device.uuid);
+		did = device.uuid;
+	}catch(err){}
+	
 	$("#sysRegion").html(sysregion);
 	menuUpdate();
 }
@@ -112,7 +123,7 @@ function menuUpdate(){
 	
     $.ajax({
         url: path,
-        data: {"criteria":paramStr},
+        data: {"criteria":paramStr,"did":did},
         type: 'POST',
         success: function(result){
         	selects = result;
