@@ -7,48 +7,6 @@ var did="";
 
 var selects;
 
-
-$(function () {
-
-	$("#dtp_input2").bind("click",function(){
-		$(this).next().click();
-	});
-    $('#datetimepicker1').datetimepicker({
-    	format: 'YYYY-MM-DD',
-    	showClose: true,
-        toolbarPlacement: 'bottom',
-        ignoreReadonly: true,
-        focusOnShow: false
-    });
-    
-	$("#dtp_input4").bind("click",function(){
-		$(this).next().click();
-	});
-	$('#datetimepicker2').datetimepicker({
-    	format: 'YYYY-MM-DD',
-    	showClose: true,
-        toolbarPlacement: 'bottom',
-        ignoreReadonly: true,
-        focusOnShow: false
-    });
-	
-	$('#dtp_input3').datetimepicker({
-        format: 'HH:mm',
-        showClose: true,
-        toolbarPlacement: 'bottom',
-        ignoreReadonly: true,
-        focusOnShow: false
-    });
-	
-    $('#dtp_input5').datetimepicker({
-        format: 'HH:mm',
-        showClose: true,
-        toolbarPlacement: 'bottom',
-        ignoreReadonly: true,
-        focusOnShow: false
-    });
-});
-
 if (typeparam.length){
 	$('#dtp_input0').val(typeparam);
 }
@@ -74,10 +32,8 @@ $("#dtp_confirm").bind("click",function(){
 		$(this).val(encodeURIComponent(this.value));
 	});
 	
-	//
 });
 $("#dtp_cancel").bind("click",function(){
-	console.log("cancel clicked");
 	history.back();
 });
 $("[name^=region]").bind("change",function(){
@@ -102,7 +58,6 @@ function init(){
 	updateSysRegion();
 
 	try{
-		console.log(device.uuid);
 		did = device.uuid;
 	}catch(err){}
 	
@@ -184,15 +139,18 @@ function updateLocList(selected) {
 
 function keywordAdd(el){
 	keycount = keycount+1;
-	var parent = $(el).parent().parent();
-	var cloneEl = parent.clone();
+	var parent1 = $(el).parent().prev();
+	var cloneEl = parent1.clone();
 
-	cloneEl.find('[name^=keyword]')[0].value = "";
-	cloneEl.find('[name^=keyword]')[0].name = "keyword"+keycount;
-	$(cloneEl).appendTo(parent.parent());
+	console.log(keycount);
+	
+	$(cloneEl).find('[name^=keyword]').val("");
+	
+	$(cloneEl).find('[name^=keyword]')[0].name = "keyword"+keycount;
+	$(cloneEl).insertAfter(parent1);
 }
 
 function keywordRemove(el){
-	var prevNode = $(el).parent().parent().prev()[0];
-	if($(prevNode).is('div')) $(el).parent().parent().remove();
+	var prevNode = $(el).parent().prev().prev();
+	if($(prevNode).is('li') && $(prevNode).hasClass("key")) $(prevNode).remove();
 }

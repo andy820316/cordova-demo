@@ -97,6 +97,13 @@ function init(){
 	updateSysRegion();
 	$("#sysRegion").html(sysregion);
 	menuUpdate();
+	
+	try {
+	$("#uuid").html("device     :"+window.plugins.Device.device());
+	}catch(err){ $("#uuid").html(err);}
+
+	
+	
 }
 
 function updateSysRegion(){
@@ -142,6 +149,8 @@ function menuUpdate(){
 
     $('[name=region]').val('');
     $('[name=location]').val('');
+    $('[name=uuid]').val('');
+
 }
 
 function updateLocList(selected) {
