@@ -1,6 +1,10 @@
+var Identifier;
 function login(){
 console.log("logging in")
-var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value;
+$(document).bind("deviceready",onDeviceReady);
+console.log(" UUID IS : " + device.uuid);
+Identifier = device.uuid;
+var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value + '&identifier=' +Identifier;
 var username = document.getElementById('lg_username').value;
 		  $.ajax({
             type: "POST",
@@ -10,7 +14,7 @@ var username = document.getElementById('lg_username').value;
             success: function(result){
               if(result != "incorrect"){
                 window.location = "index_mod.html";
-                sessionStorage.setItem("key", result);
+                sessionStorage.setItem("sys_region", result);
                 return true;
               }else {
                 navigator.notification.alert("登入失敗",function(){},"登入資料有誤","OK");
@@ -28,6 +32,11 @@ function logout(){
     },
     'Log Out?',
     ['登出','取消']);
+}
+
+function onDeviceReady(){
+    Identifier = device.uuid;
+    console.log(" UUID IS : " + Identifier);
 }
 
 function resetpass(){
