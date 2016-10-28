@@ -1,0 +1,36 @@
+.tp-login-bg-img{
+	width:500px;
+	margin-top:30px;
+	margin-left:calc(50% - 250px);
+	}
+.tp-login{
+	position:absolute;
+	bottom:140px;
+	left:calc(50% - 250px);
+	list-style:none;
+	width:500px;
+	}
+.tp-inupt-login-01{
+	width:480px;
+	padding:5px;
+	border:none;
+	background-color:none;
+	background:url(../images/index_inupt.png) repeat;
+	font-size:14pt;
+	color:#0178c6;
+	margin-left:0px;
+	}
+.tp-login-icon{
+	width:480px;
+	padding:8px 5px;
+	text-align:center;
+	background-color:#c2dc99;
+	color:#228c2d;
+	font-size:14pt;
+	margin-left:0px;
+	letter-spacing:10px;
+	}
+.tp-login-icon:hover {
+	background-color:#28a535;
+	color:#fff;
+	}

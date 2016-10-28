@@ -1,0 +1,87 @@
+.tp-login-bg-img{
+	width:300px;
+	margin-top:30px;
+	margin-left:calc(50% - 150px);
+	}
+.tp-login{
+	position:absolute;
+	bottom:150px;
+	left:calc(50% - 150px);
+	list-style:none;
+	width:300px;
+	}
+.tp-inupt-login-01{
+	width:280px;
+	padding:5px;
+	border:none;
+	background-color:none;
+	background:url(../images/index_inupt.png) repeat;
+	font-size:14pt;
+	color:#0178c6;
+	margin-left:0px;
+	}
+.tp-login-icon{
+	width:280px;
+	padding:8px 5px;
+	text-align:center;
+	background-color:#c2dc99;
+	color:#228c2d;
+	font-size:14pt;
+	margin-left:0px;
+	letter-spacing:10px;
+	}
+.tp-login-icon:hover {
+	background-color:#28a535;
+	color:#fff;
+	}
+/*-- dialog --*/
+/*-- dialog 共用設定 --*/
+.tp-dialog-c{	
+	width:280px;	 	
+	}
+.tp-dialog-h1{
+	margin:0px 3px;
+	letter-spacing:3px;
+	height:50px;
+	}
+.tp-dialog-ul{
+	padding:5px;}
+.tp-dialog-li{
+	margin:10px 0px;}
+.tp-dialog-li-title{
+	text-align:left;
+	width:100%;
+	}
+.tp-dialog-input-text-one{
+	width:98%;
+	margin-top:5px;
+	}
+.tp-diolag-note{	
+	width:100%;
+	margin-left:0;
+	}
+.tp-dialog-checkbox-one{
+	vertical-align:middle;
+	}	
+.tp-dialog-submit{
+	margin-left:9%;
+	padding: 8px 20px 8px 20px;
+	}
+/*-- dialog 忘記密碼 --*/
+.tp-change-password-submit{
+	margin-left:20px;}
+.tp-change-password-submit{
+	margin-left:5px;
+	}
+.tp-change-password-dialog-enter-c{
+	margin-left:22%;
+	}
+.tp-change-password-dialog-link-pool{
+	margin-top:10px;
+	width:98%;
+	}
+.tp-change-password-dialog-link-one{
+	word-break:break-all;
+    width:19%;
+	margin-left:4%;
+	}

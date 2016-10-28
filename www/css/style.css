@@ -1,52 +1,5 @@
-div.blocks {
-    font-size: 16px; font-size: 4vw;
-    position:static;
-    background-color: AliceBlue;
-    width: 100vw;
-    border: 5px solid green;
-    padding: 25px;
-    margin: auto;
-}
-body {
-    background-color: powderblue;
-    margin:0;
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-
-.footer {
-    background-color: lightblue;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  /* Set the fixed height of the footer here */ 
-    height: 30px;
-}
-.results{
-    text-align: center;
-    font-size: 2vw;
-}
-.querypanelCustom {
-    width: 95%;
-    margin-top: 10px;
-    margin-left:auto;
-    margin-right:auto;
-}
-.queryitemCustom {
-	padding-top: 10px;
-}
 .groupitemCustom {
-    margin-top: 10px;
-    width: 100%;
     display:none;
-}
-.footerCustom {
-    text-align:center;
-    margin-left:auto;
-    margin-right:auto;
-}
-.inputTitleCustom{
-    width:80px; 
 }
 .btn-sq-lg {
   font-size: 150%;

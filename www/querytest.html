@@ -1,144 +1,93 @@
 <html>
 	<head>
-		<meta charset="UTF-8">
     	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>供電單位行動查詢APP</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4, minimum-scale=1, user-scalable=yes">
+	    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+	    <link rel="stylesheet" href="css/webStyle.css">
+	    <link rel="stylesheet" type="text/css" media="screen and (max-width:768px)"  href="css/padStyle.css">
+	    <link rel="stylesheet" type="text/css" media="screen and (max-width:480px)" href="css/phoneStyle.css">
+
     	<link rel="stylesheet" href="css/style.css">
     	
     	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>	
         
-    	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-    	
-        <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
-        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.ee.js"></script>
         <script type="text/javascript" src="js/jqurl.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
-    	<header class="bg-info navbar-fixed-top">
-        	<div class="navbar-header">
-                <span class="btn widget btn-primary">
-                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
-                </span>
-        	</div>
-    	</header>
-    	        <div class="container-fluid" id="results">
-
-			<div class="panel panel-default querypanelCustom">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">設定搜尋條件 - <span id="sysRegion"></span></h3>
-			  </div>
-			  
-			<div>
-			    <form action="result.html" class="form-horizontal"  role="form">
-			        <fieldset>
-
-		            <div class="input-group groupitemCustom N000D">
-		                <label for="dtp_input2" class="col-md-2 control-label">日期起</label>
-				        <div class='input-group date form_time col-md-5' id='datetimepicker1'>
-		                    <input type='text' name="startdate" id="dtp_input2" class="form-control" readonly="true" />
-		                    <span class="input-group-addon">
-		                        <span class="glyphicon glyphicon-calendar"></span>
-		                    </span>
-		                </div>
-		            </div>
-		                
-		            <div class="input-group groupitemCustom N000D">
-		                <label for="dtp_input3" class="col-md-2 control-label">時間起</label>
-		                <div class='input-group date form_time col-md-5' id='datetimepicker3'>
-		                    <input type='text' name="starttime" id="dtp_input3" class="form-control" readonly="true" />
-		                    <span class="input-group-addon">
-		                        <span class="glyphicon glyphicon-time"></span>
-		                    </span>
-		                </div>
-		            </div>
-
-
-		            <div class="input-group groupitemCustom N000D">
-		                <label for="dtp_input4" class="col-md-2 control-label">日期迄</label>
-				        <div class='input-group date form_time col-md-5' id='datetimepicker2'>
-		                    <input type='text' name="enddate" id="dtp_input4" class="form-control" readonly="true" />
-		                    <span class="input-group-addon">
-		                        <span class="glyphicon glyphicon-calendar"></span>
-		                    </span>
-		                </div>
-		            </div>
-					
-		            <div class="input-group groupitemCustom N000D">
-		                <label for="dtp_input5" class="col-md-2 control-label">時間迄</label>
-		                <div class='input-group date form_time col-md-5' id='datetimepicker5'>
-		                    <input type='text' name="endtime" id="dtp_input5" class="form-control" readonly="true" />
-		                    <span class="input-group-addon">
-		                        <span class="glyphicon glyphicon-time"></span>
-		                    </span>
-		                </div>
-		            </div>
-					
-					<div class="input-group groupitemCustom N000A N000B C000A N000E">
-		                <label for="dtp_input5" class="col-md-2 control-label">轄區</label>
-		                <div class="input-group col-md-5" >
-		                  <select class="form-control" name="region" id="dtp_input6">
-						  		<option value=''>選擇轄區</option>
-						  </select>
-		                </div>
-					</div>
-					<div class="input-group groupitemCustom N000A N000B N000E C000A">
-		                <label for="dtp_input5" class="col-md-2 control-label">變電所</label>
-		                <div class="input-group col-md-5" >
-						  <select class="form-control" name="location" id="dtp_input7">
-						  		<option value=''>選擇變電所</option>
-						  </select>
-		                </div>
-					</div>
-					<div class="input-group groupitemCustom N000F">
-						<label for="dtp_input8" class="col-md-2 control-label">訊息類型</label>
-		                <div class="input-group col-md-5" >
-						  <select class="form-control" name="msgId" id="dtp_input8">
+	
+    <!-- header -->
+    <header class="tp-header">
+    	<div class="tp-header-go-prev" title="上一頁" onclick="redirback()">上一頁</div>
+    	<h1 class="tp-header-name">供電單位行動查詢APP</h1>
+    </header>
+    <!-- content -->
+    <div class="tp-container">
+    	<h2 class="tp-content-h2">複合式查詢</h2>
+        <h3 class="tp-content-h3">設定搜尋條件 - <span id="sysRegion"></span></h3>
+        <form action="result.html">
+            <ul class="tp-content-search-pool">
+                <li class="groupitemCustom N000D">
+                    <span class="tp-search-item">日期起</span>
+                    <label><input type="date" name="startdate" class="tp-inupt-text-01 tp-inupt-date"></label>
+                </li>
+                <li class="groupitemCustom N000D">
+                    <span class="tp-search-item">時間起</span>
+                    <label><input type="time" name="starttime" class="tp-inupt-text-01 tp-inupt-time"></label>
+                </li>
+                <li class="groupitemCustom N000D">
+                    <span class="tp-search-item">日期迄</span>
+                    <label><input type="date" name="enddate" class="tp-inupt-text-01 tp-inupt-date"></label>
+                </li>
+                <li class="groupitemCustom N000D">
+                    <span class="tp-search-item">時間迄</span>
+                    <label><input type="time" name="endtime" class="tp-inupt-text-01 tp-inupt-time"></label>
+                </li>
+                <li class="groupitemCustom N000A N000B C000A N000E">
+                    <span class="tp-search-item">轄區</span>
+                    <select name="region" class="tp-select-01">
+                            <option value=''>請選擇</option>
+                    </select>
+                </li>
+                <li class="groupitemCustom N000A N000B N000E C000A">
+                    <span class="tp-search-item">變電所</span>
+                    <select name="location" class="tp-select-01">
+                            <option value=''>請選擇</option>
+                    </select>
+                </li>
+                <li class="groupitemCustom N000F">
+                    <span class="tp-search-item">訊息類型</span>
+                    <select name="msgId" class="tp-select-01">
+                            <option value=''>請選擇</option>
 						    <option value='1'>GENERAL SUMMARY</option>
 						    <option value='2'>SOE</option>
-						  </select>
-						</div>					
-					</div>
-					<div class="input-group groupitemCustom N000G">
-		                <label for="dtp_input9" class="col-md-2 control-label">關鍵字</label>
-		                <div class="input-group col-md-5">
-						  <input type="text" name="keyword" class="form-control"  placeholder="關鍵字" aria-describedby="basic-addon1">
-		                <div class="input-group col-md-5" >
-  		                  <button type="button" class="btn btn-default btn-sm" onclick="javascript:keywordAdd(this)">
-				            <span class="glyphicon glyphicon-plus"></span>
-				          </button>
-  		                  <button type="button" class="btn btn-default btn-sm" onclick="javascript:keywordRemove(this)">
-				            <span class="glyphicon glyphicon-minus"></span>
-				          </button>
-		                </div>
+                    </select>
+                </li>
+                <li class="groupitemCustom key N000G">
+                    <span class="tp-search-item">關鍵字</span>
+                    <label><input type="text" name="keyword" class="tp-inupt-text-01"></label>
+                </li>
+                <li class="groupitemCustom N000G">
+                	<input type="button" class="tp-search-list-icon-01 tp-search-list-add" title="+" value="+" onclick="javascript:keywordAdd(this)">
+                    <input type="button" class="tp-search-list-icon-01 tp-search-list-qu" value="?" title="?">
+                    <input type="button" class="tp-search-list-icon-01 tp-search-list-cut" title="-" value="-" onclick="javascript:keywordRemove(this)">
+                </li>
+            </ul>
+            <div class="tp-search-cancel-confirm-pool">
+            	<input type="button" id="dtp_cancel" class="tp-search-cancel" value="取消">
+                <input type="submit" id="dtp_confirm" class="tp-search-confirm" value="確認">
+            </div>
+            
+			<input type="hidden" name="type" id="dtp_input0" />
+			<input type="hidden" name="sid" id="dtp_input10" />
+			<input type="hidden" name="tid" id="dtp_input11" />
+        </form>
+        
+    </div>
 
-		                </div>
-					</div>
-
-					<div class="buttonList">
-			        <button type="submit" class="btn btn-default" id="dtp_confirm">確認</button>
-			        <button type="submit" class="btn btn-default" id="dtp_cancel">取消</button>
-					</div>
-					
-					<input type="hidden" name="type" id="dtp_input0" />
-					<input type="hidden" name="sid" id="dtp_input10" />
-					<input type="hidden" name="tid" id="dtp_input11" />
-					
-			        </fieldset>
-			    </form>
-			    
-			</div>
-
-			</div>
-		</div>
-    <footer class="footer">
-   	<div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
-    </footer>
-    
     <script type="text/javascript" src="js/queryScript.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
         

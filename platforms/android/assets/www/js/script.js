@@ -6,9 +6,12 @@ var displaycount = 0;
 var MAXdisplaycount = 10;
 var viewId= '';
 var session = null;
-var sysregion = '嘉南';
+var sysregion = '台北';
 //const path = 'http://localhost:8080/Example/Demo';
 const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
+//const path = 'http://localhost:8080/Example/Query';
+
+var did="";
 
 function storevalue(value){
     myList = value;
@@ -41,7 +44,7 @@ function getData(){
     
     $.ajax({
         url: path,
-        data: {"criteria":paramStr},
+        data: {"criteria":paramStr,"did":did},
         type: 'POST',
         success: function(result){
             storevalue(result);
@@ -62,19 +65,19 @@ function nodedata(currentdocument){
 }
 
 function nodeProcess() {
-    $.template('n001',"<table class='tableType1'><col width ='120'><tr><th>訊息類型 : </th><th>${message_type}</th></tr><tr><td>發生時間 : </td><td>${ae_date}</td></tr><tr><td>位置 : </td><td>${ae_grp_name}</td></tr><tr><td>電壓等級 : </td><td>${voltage}</td></tr><tr><td>設備 : </td><td>${equipment}</td></tr><tr><td>敘述 : </td><td>${ae_alm_text}</td></tr></table>");
+    $.template('n001','<div><h2 class="tp-result-unit-name">訊息類型 : ${message_type}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">發生時間</span><span class="tp-result-conten">${ae_date}</span></li><li><span class="tp-result-item">位置</span><span class="tp-result-conten">${ae_grp_name}</span></li><li><span class="tp-result-item">電壓等級</span><span class="tp-result-conten">${voltage}</span></li><li><span class="tp-result-item">設備</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">敘述</span><span class="tp-result-conten">${ae_alm_text}</span></li></ul></div>');
     //$.template('n001',"<table class='tableType1'><col width ='100'><tr><th>訊息類型:</th><th> ${messageType}</th></tr><tr><td>發生時間:</td><td>${ae_date}</td></tr><tr><td>位置:</td><td>${ae_grp_name}</td></tr><tr><td>敘述:</td><td>${ae_alm_text}</td></tr></table>");
-    $.template('p001',"<table class='tableType1'><col width ='130'><tr><th>${title} </th><th>${equipment}</th></tr><tr><td>設備編號 :</td><td>${equipment}</td></tr><tr><td>日期時間 : </td><td>${timeDate}</td></tr><tr><td> 運轉值: </td><td><font color = '${color}'>${value}</font></td></tr><tr><td> 狀態: </td><td><font color = '${color}'>${status}</font></td></tr><tr><td>基準值上限/下限 : </td><td>${max} / ${min} </td></tr></table>");
-    $.template('c001',"<table class='tableType1'><col width ='120'><tr><th>變電所/裝置 : </th><th>${Place}</th></tr><tr><td>日期時間 : </td><td>${Date}</td></tr><tr><td>類型 : </td><td>${Type}</td></tr><tr><td>動作時間 : </td><td><font color ='${color}'>${dur} ms</font></td></tr><tr><td>基準值/偏差值 : </td><td>${base} ms/<font color ='${color}'> ${bias} ms</font></td></tr></table>");
+    $.template('p001','<div><h2 class="tp-result-unit-name">${title} ${equipment}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">設備編號</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">日期時間</span><span class="tp-result-conten">${timeDate}</span></li><li><span class="tp-result-item">運轉值</span><span class="tp-result-conten"><font color = "${color}">${value}</font></span></li><li><span class="tp-result-item">狀態</span><span class="tp-result-conten"><font color = "${color}">${status}</font></span></li><li><span class="tp-result-item">基準值上限/下限</span><span class="tp-result-conten">${max} / ${min}</span></li></ul></div>');
+    $.template('c001','<div><h2 class="tp-result-unit-name">變電所/裝置 : ${Place}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">日期時間</span><span class="tp-result-conten">${Date}</span></li><li><span class="tp-result-item">類型</span><span class="tp-result-conten">${Type}</span></li><li><span class="tp-result-item">動作時間</span><span class="tp-result-conten"><font color ="${color}">${dur} ms</font></span></li><li><span class="tp-result-item">基準值/偏差值</span><span class="tp-result-conten">${base} ms/<font color ="${color}"> ${bias} ms</font></span></li></ul></div>');
 	
-	
+    
 	var tnodes = $.tmpl(viewId,myList);
 
     while(index < total_results && displaycount < MAXdisplaycount){ 
-        var para = document.createElement("div");
+        var para = document.createElement("li");
         var name = 'result'+index;
         para.id = name;
-        para.className = "well";
+//        para.className = "well";
 
         para.appendChild(tnodes[index]);
         var results = document.getElementById("results");
@@ -89,7 +92,7 @@ function nodeProcess() {
         results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
     }
 
-    document.getElementById("footertext").innerHTML = "Displaying results " + (index-displaycount+1) + " to " + (index) +" , total results: " +total_results + "    USER :   " + session;  
+    document.getElementById("footertext").innerHTML = "" + (index-displaycount+1) + " to " + (index) +" , total: " +total_results + "    USER :   " + session;  
 }
 function remove(){
     while(displaycount > 0){
@@ -137,3 +140,4 @@ function updateSysRegion(){
         sysregion = def;
     }
 }
+
