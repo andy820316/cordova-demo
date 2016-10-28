@@ -192,6 +192,6 @@ function keywordAdd(el){
 
 function keywordRemove(el){
 	var prevNode = $(el).parent().prev().prev();
-	if($(prevNode).is('li') && $(prevNode).hasClass("key")) $(prevNode).remove();
+	if($(prevNode).is('li') && $(prevNode).hasClass("key")) $(el).parent().prev().remove();
 }
 
