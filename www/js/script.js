@@ -13,6 +13,10 @@ const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
 
 var did="";
 
+$(document).bind("mobileinit", function(){
+	$.mobile.pushStateEnabled = false;
+});
+
 function storevalue(value){
     myList = value;
     total_results = value.length;

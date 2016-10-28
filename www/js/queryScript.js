@@ -7,6 +7,10 @@ var did="";
 
 var selects;
 
+$(document).bind("mobileinit", function(){
+	$.mobile.pushStateEnabled = false;
+});
+
 if (typeparam.length){
 	$('#dtp_input0').val(typeparam);
 }
@@ -34,7 +38,7 @@ $("#dtp_confirm").bind("click",function(){
 	
 });
 $("#dtp_cancel").bind("click",function(){
-	history.back();
+	redirback();
 });
 $("[name^=region]").bind("change",function(){
 	$('[name=location]').val('');
@@ -154,3 +158,4 @@ function keywordRemove(el){
 	var prevNode = $(el).parent().prev().prev();
 	if($(prevNode).is('li') && $(prevNode).hasClass("key")) $(prevNode).remove();
 }
+
