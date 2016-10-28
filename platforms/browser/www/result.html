@@ -1,36 +1,49 @@
 ﻿<html>
 	<head>
-		<meta charset="UTF-8">
     	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>供電單位行動查詢APP</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4, minimum-scale=1, user-scalable=yes">
+	    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+	    <link rel="stylesheet" href="css/webStyle.css">
+	    <link rel="stylesheet" type="text/css" media="screen and (max-width:768px)"  href="css/padStyle.css">
+	    <link rel="stylesheet" type="text/css" media="screen and (max-width:480px)" href="css/phoneStyle.css">
+	    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<!-- 	    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+
     	<link rel="stylesheet" href="css/style.css">
     	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>	
+
         <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/resultScript.js"></script>
+        
         <script type="text/javascript" src="js/jqurl.js"></script>
 
 
 	</head>
-	<body onload="getData()" >
-        <header class="bg-info navbar-fixed-top">
-            <div class="navbar-header">
-                <span class="btn widget btn-primary">
-                    <i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left" onclick="redirback()"></i>
-                </span>
-                <label class="text-primary">result page</label>
-            </div>
-        </header>
-        <div class="container-fluid" id = "results">
-		</div>
-        <footer class="footer">
-        <button type="button" class="btn btn-primary pull-left" onclick ="Previous()"> < </button>
-        <result class="results" id = "footertext"></result>
-        <button type="button" class="btn btn-primary pull-right" onclick ="Next()" > > </button>
-    </footer>
-        <script type="text/javascript" src="cordova.js"></script>
+	<body>
+	
+    <div class="tp-container">
+	    <!-- header -->
+	    <header class="tp-header">
+	    	<div class="tp-header-go-prev" title="上一頁" onclick="redirback()"></div>
+	    	<h1 class="tp-header-name">供電單位行動查詢APP</h1>
+	    </header>
+    
+    	<ul class="tp-result-pool" id="results">
+        </ul>
+
+		<footer>
+	        <ol class="tp-result-page-list" >
+	           <li id="tp-result-page-go-prev" class="tp-result-page-item" ><span class="tp-result-page-link" title="上一頁" onclick="Previous()">上一頁</span></li>
+	           <li class="tp-result-page-item tp-result-page-current" id="footertext">Display Current</li>
+	           <li id="tp-result-page-go-next" class="tp-result-page-item" ><span class="tp-result-page-link" title="下一頁" onclick="Next()">下一頁</span></li>
+	        </ol>
+		</footer>
+    </div>
+	
+    <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
