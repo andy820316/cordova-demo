@@ -15,13 +15,8 @@ if (typeparam.length){
 	$('#dtp_input0').val(typeparam);
 }
 if (searchparam.length){
-	if(searchparam == 'N000C') {
-		$('.groupitemCustom').each(function(){
-			$(this).show();});
-	} else {
-		$('.'+searchparam).each(function(){
-			$(this).show();});
-	}
+	$('.'+searchparam).each(function(){
+		$(this).show();});
 	$('#dtp_input11').val(searchparam);
 }
 if (sid.length){
