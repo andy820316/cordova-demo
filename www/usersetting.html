@@ -10,6 +10,9 @@
 	    <link rel="stylesheet" type="text/css" media="screen and (max-width:768px)"  href="css/padStyle.css">
 	    <link rel="stylesheet" type="text/css" media="screen and (max-width:480px)" href="css/phoneStyle.css">
 
+   		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css?ver=259">
+
         <link rel="stylesheet" href="css/style.css">
 
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -27,75 +30,74 @@
 	    </header>
 	    
         <div class="tp-container" id="results">
-            <div class="icon">
-                <div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" data-toggle="modal" data-target="#resetpass" onclick="logout()"><span class="nav05-icon-img"></span>使用者登出</div>
-            </div>     
-            <div class="icon">
-                <div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" data-toggle="modal" data-target="#resetpass"><span class="nav05-icon-img"></span>更改密碼>更改密碼</div>
-            </div>
-            <div class="icon">
-                <div role="button" class="nav-icon nav05-sub-icon tp-sign-out-icon" data-toggle="modal" data-target="#modRegion"><span class="nav05-icon-img"></span>變更供電區</div>
-            </div>
+			<div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" onclick="logout()"><span class="nav05-icon-img"></span>使用者登出</div>
+			<div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" data-toggle="modal" data-target="#resetpass"><span class="nav05-icon-img"></span>更改密碼>更改密碼</div>
+			<div role="button" class="nav-icon nav05-sub-icon tp-sign-out-icon" data-toggle="modal" data-target="#modRegion"><span class="nav05-icon-img"></span>變更供電區</div>
         </div>
+
         <div class="modal" id="resetpass" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">更改密碼</h4>
-                    </div>
-                    <div class="modal-body">
-                        <label>舊密碼</label>
-                        <input id="oldpass"></input><br>
-                        <label>新密碼</label>
-                        <input id="newpass"></input><br>
-                        <label>確認密碼</label>
-                        <input id="confirmation"></input><br>
-                    </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-default" onclick="resetpass()">確認</button>
-                </div>
-                </div>
-             </div>
+					<div id="tp-change-password" class="tp-dialog-c">
+				        <div class="tp-dialog tp-change-password-c">
+				            <h1 class="tp-dialog-h1">更改密碼</h1>
+				            <ul class="tp-dialog-ul">
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">舊密碼</span>
+				                    <label><input name="" type="text" value="" class="tp-dialog-input-text-one"></label>
+				                </li>
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">新密碼</span>
+				                    <label><input name="" type="text" id="oldpass" value="" class="tp-dialog-input-text-one"></label>
+				                </li>
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">再次確認</span>
+				                    <label><input name="" type="text" id="newpass" value="" class="tp-dialog-input-text-one"></label>
+				                </li>
+				                <li class="tp-dialog-submit-c">
+			                		<button type="button" class="tp-dialog-submit tp-change-password-submit" data-dismiss="modal">取消</button>
+			                        <button type="button" class="tp-dialog-submit tp-change-password-submit" id="confirmation" onclick="resetpass()">確定</button><br>
+				                </li>
+				            </ul>            
+				        </div>
+				    </div>
+	        </div>
         </div>
-        
+
         <div class="modal" id="modRegion" role="dialog">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">變更預設供電區</h4>
-                    </div>
-                    <div class="modal-body">
-                        <label for="curRegion">預設供電區</label>
-                        <div id="curRegion"></div><br>
-                        <div class="form-group">
-	                        <label for="newRegion">新設供電區</label>
-	                        <select class="form-control" name="region" id="newRegion">
-	                        	<option value=''>請選供電區</option>
-	                        	<option value='台中'>台中</option>
-	                        	<option value='台北'>台北</option>
-	                        	<option value='嘉南'>嘉南</option>
-	                        	<option value='新桃'>新桃</option>
-	                        	<option value='花東'>花東</option>
-	                        	<option value='高屏'>高屏</option>
-							</select>
-                        </div>
-                    </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="saveCurRegion()">確認</button>
-                </div>
-                </div>
-             </div>
+					<div id="tp-change-password" class="tp-dialog-c">
+				        <div class="tp-dialog tp-change-password-c">
+				            <h1 class="tp-dialog-h1">變更供電區</h1>
+				            <ul class="tp-dialog-ul">
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">預設供電區</span>
+			                        <div class="tp-select-custom01" id="curRegion"></div><br>
+				                </li>
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">新設供電區</span>
+				                </li>
+				                <li>
+				                    <select class="tp-select-01 tp-select-custom01" name="region" id="newRegion">
+			                        	<option value=''>請選供電區</option>
+			                        	<option value='台中'>台中</option>
+			                        	<option value='台北'>台北</option>
+			                        	<option value='嘉南'>嘉南</option>
+			                        	<option value='新桃'>新桃</option>
+			                        	<option value='花東'>花東</option>
+			                        	<option value='高屏'>高屏</option>
+									</select>
+				                </li>
+				                <li class="tp-dialog-submit-c">
+			                		<button type="button" class="tp-dialog-submit tp-change-password-submit" data-dismiss="modal">取消</button>
+			                        <button type="button" class="tp-dialog-submit tp-change-password-submit" id="confirmation" onclick="saveCurRegion()">確定</button><br>
+				                </li>
+				            </ul>            
+				        </div>
+				    </div>
+	        </div>
         </div>
-        
-    <footer class="footer">
-    <div class="footerCustom">&copy;2016  台灣電力公司 版權所有</div>
-    </footer>
-    
-    <script type="text/javascript" src="js/usersetting.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+
+	    <script type="text/javascript" src="js/usersetting.js"></script>
+	    <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
