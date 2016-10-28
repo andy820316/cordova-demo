@@ -1,16 +1,19 @@
+var Identifier;
 function login(){
 console.log("logging in")
-var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value;
+$(document).bind("deviceready",onDeviceReady);
+
+var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value + '&Identifier=' +Identifier;
 var username = document.getElementById('lg_username').value;
 		  $.ajax({
             type: "POST",
-            url: "http://172.20.10.12:8080/Example/Login",
+            url: "http://powersupply.taipower.com.tw:8080/Example/Login",
             data: datastream,
             cache: false,
             success: function(result){
               if(result != "incorrect"){
                 window.location = "index_mod.html";
-                sessionStorage.setItem("key", result);
+                sessionStorage.setItem("sys_region", result);
                 return true;
               }else {
                 navigator.notification.alert("登入失敗",function(){},"登入資料有誤","OK");
@@ -30,6 +33,11 @@ function logout(){
     ['登出','取消']);
 }
 
+function onDeviceReady(){
+    Identifier = device.uuid;
+    console.log(" UUID IS : "  Identifier);
+}
+
 function resetpass(){
 var oldpass = document.getElementById('oldpass').value;
 var newpass = document.getElementById('newpass').value;
@@ -41,7 +49,7 @@ var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + s
       }else{
         $.ajax({
               type:"POST",
-              url: "http://172.20.10.12:8080/Example/ChangePass",
+              url: "http://powersupply.taipower.com.tw:8080/Example/ChangePass",
               data: pass_stream,
               cache: false,
               success: function(result){
