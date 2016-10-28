@@ -4,7 +4,7 @@ var datastream = 'Username=' + document.getElementById('lg_username').value + '&
 var username = document.getElementById('lg_username').value;
 		  $.ajax({
             type: "POST",
-            url: "http://172.20.10.12:8080/Example/Login",
+            url: "http://powersupply.taipower.com.tw:8080/Example/Login",
             data: datastream,
             cache: false,
             success: function(result){
@@ -41,7 +41,7 @@ var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + s
       }else{
         $.ajax({
               type:"POST",
-              url: "http://172.20.10.12:8080/Example/ChangePass",
+              url: "http://powersupply.taipower.com.tw:8080/Example/ChangePass",
               data: pass_stream,
               cache: false,
               success: function(result){
