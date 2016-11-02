@@ -160,7 +160,7 @@ function updateLineList(selected) {
 		        			var optj = opts[opt][0];
 		        			$.each(optj,function(key,value){
 			        			optit.value = encodeURIComponent(value);
-			        			optit.innerHTML = key;
+			        			optit.innerHTML = value;
 		        			});
 		        			if (typeof optj != 'undefined')
 		            		$(optit).appendTo($('[name=line]'));
