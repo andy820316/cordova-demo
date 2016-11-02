@@ -30,7 +30,7 @@ function getData(){
     var allparams = $.url.paramAll();
     updateSysRegion()
     $.each(allparams, function(k,v){
-    	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v);
+    	if (k.match(/keyword/)) allparams[k] = decodeURIComponent(v).replace(/[|;$%@"<>()+,]/g, "");
     });
 
     allparams.region = decodeURIComponent(allparams.region);
@@ -96,7 +96,7 @@ function nodeProcess() {
         results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
     }
 
-    document.getElementById("footertext").innerHTML = "" + (index-displaycount+1) + " to " + (index) +" , total: " +total_results + "    USER :   " + session;  
+    document.getElementById("footertext").innerHTML = "" + (index-displaycount+1) + " to " + (index) +" , total: " +total_results;  
 }
 function remove(){
     while(displaycount > 0){
