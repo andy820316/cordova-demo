@@ -1,9 +1,6 @@
 /**
  * temp
  */
-//var curpath = "http://172.20.10.12:8080/Example/";
-var curpath = "http://localhost:8080/Example/";
-
 $(window).bind("load",function(){
 	init();
 });

@@ -6,6 +6,7 @@ console.log(" UUID IS : " + device.uuid);
 Identifier = device.uuid;
 var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value + '&identifier=' +Identifier;
 var username = document.getElementById('lg_username').value;
+sessionStorage.setItem("Username",username);
 		  $.ajax({
             type: "POST",
             url: "http://powersupply.taipower.com.tw:8080/Example/Login",
@@ -46,7 +47,7 @@ function resetpass(){
 var oldpass = document.getElementById('oldpass').value;
 var newpass = document.getElementById('newpass').value;
 var confirmation = document.getElementById('confirmation').value;
-var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + sessionStorage.getItem("key");
+var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + sessionStorage.getItem("Username");
     if ( newpass == confirmation){
       if (oldpass == newpass) {
         navigator.notification.alert('新輸入密碼與舊密碼相同');

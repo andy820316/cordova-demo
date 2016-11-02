@@ -6,6 +6,7 @@ console.log(" UUID IS : " + device.uuid);
 Identifier = device.uuid;
 var datastream = 'Username=' + document.getElementById('lg_username').value + '&Password=' + document.getElementById('lg_password').value + '&identifier=' +Identifier;
 var username = document.getElementById('lg_username').value;
+sessionStorage.setItem("Username",username);
 		  $.ajax({
             type: "POST",
             url: "http://powersupply.taipower.com.tw:8080/Example/Login",
