@@ -3,7 +3,7 @@ var total_results = 0;
 var index = 0; 
 var tempindex = 0;
 var displaycount = 0;
-var MAXdisplaycount = 10;
+var MAXdisplaycount = 20;
 var viewId= '';
 var session = null;
 var sysregion = '台北';
@@ -137,6 +137,12 @@ function Next(){
         nodeProcess();
     }
 }
+function First(){
+    remove();
+    index = 0;
+    nodeProcess();
+}
+
 function updateSysRegion(){
     var def = sessionStorage.getItem("sys_region");
     
