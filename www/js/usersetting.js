@@ -11,6 +11,12 @@ $(window).bind("load",function(){
 function init(){
 	$('#curRegion').html(sessionStorage.getItem("sys_region"));
 	
+	var acc = sessionStorage.getItem("Access");
+	if (acc && acc !== "TRUE") {
+		$("#regionLink").remove();
+		$("#modRegion").remove();
+	}
+	
 }
 
 function init_1(){
