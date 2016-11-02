@@ -32,7 +32,7 @@
         <div class="tp-container" id="results">
 			<div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" onclick="logout()"><span class="nav05-icon-img"></span>使用者登出</div>
 			<div role="button" class="nav-icon nav05-sub-icon tp-change-password-icon" data-toggle="modal" data-target="#resetpass"><span class="nav05-icon-img"></span>更改密碼>更改密碼</div>
-			<div role="button" class="nav-icon nav05-sub-icon tp-sign-out-icon" data-toggle="modal" data-target="#modRegion"><span class="nav05-icon-img"></span>變更供電區</div>
+			<div role="button" class="nav-icon nav05-sub-icon tp-sign-out-icon" data-toggle="modal" data-target="#modRegion" id="regionLink"><span class="nav05-icon-img"></span>變更供電區</div>
         </div>
 
         <div class="modal" id="resetpass" role="dialog">
@@ -43,15 +43,15 @@
 				            <ul class="tp-dialog-ul">
 				                <li class="tp-dialog-li">
 				                	<span class="tp-dialog-li-title">舊密碼</span>
-				                    <label><input name="" type="text" value="" class="tp-dialog-input-text-one"></label>
-				                </li>
-				                <li class="tp-dialog-li">
-				                	<span class="tp-dialog-li-title">新密碼</span>
 				                    <label><input name="" type="text" id="oldpass" value="" class="tp-dialog-input-text-one"></label>
 				                </li>
 				                <li class="tp-dialog-li">
-				                	<span class="tp-dialog-li-title">再次確認</span>
+				                	<span class="tp-dialog-li-title">新密碼</span>
 				                    <label><input name="" type="text" id="newpass" value="" class="tp-dialog-input-text-one"></label>
+				                </li>
+				                <li class="tp-dialog-li">
+				                	<span class="tp-dialog-li-title">再次確認</span>
+				                    <label><input name="" type="text" id="confirmation" value="" class="tp-dialog-input-text-one"></label>
 				                </li>
 				                <li class="tp-dialog-submit-c">
 			                		<button type="button" class="tp-dialog-submit tp-change-password-submit" data-dismiss="modal">取消</button>

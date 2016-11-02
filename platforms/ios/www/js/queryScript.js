@@ -41,19 +41,14 @@ $("[name^=region]").bind("change",function(){
 		if (this.value !== '') this.remove();
 	});
 	updateLocList(this.value);
-});
-$("[name^=location]").bind("change",function(){
+
 	$('[name=line]').val('');
 	$('[name=line]').children().each(function(){
 		if (this.value !== '') this.remove();
 	});
 	updateLineList(this.value);
+	
 });
-
-
-//$(window).bind("load",function(){
-//	init();
-//});
 
 $(document).bind("deviceready", onDeviceReady);
 
@@ -159,8 +154,11 @@ function updateLineList(selected) {
 		        			var optit = document.createElement('option');
 		        			var optj = opts[opt][0];
 		        			$.each(optj,function(key,value){
+		        				var k1 = key;
+		        				var k2 = value;
+		        				
 			        			optit.value = encodeURIComponent(value);
-			        			optit.innerHTML = key;
+			        			optit.innerHTML = value;
 		        			});
 		        			if (typeof optj != 'undefined')
 		            		$(optit).appendTo($('[name=line]'));
