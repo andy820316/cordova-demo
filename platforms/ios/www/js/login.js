@@ -30,7 +30,7 @@ function logout(){
     '是否要登出？',
     function(){
 
-    window.plugins.nativepagetransitions.slide({"href" : "index_mod.html"});      
+    window.plugins.nativepagetransitions.slide({"href" : "index.html"});      
     SessionStorage.clear;
     },
     'Log Out?',
@@ -53,7 +53,7 @@ var pass_stream = 'oldpass=' + oldpass + '&newpass=' + newpass +'&username=' + s
       }else{
         $.ajax({
               type:"POST",
-              url: "http://powersupply.taipower.com.tw:8080/Example/ChangePass",
+              url: "http://powersupply.taipower.com.tw:8080/Example/app/ChangePass",
               data: pass_stream,
               cache: false,
               success: function(result){

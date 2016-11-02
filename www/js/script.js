@@ -8,7 +8,7 @@ var viewId= '';
 var session = null;
 var sysregion = '台北';
 //const path = 'http://localhost:8080/Example/Demo';
-const path = 'http://powersupply.taipower.com.tw:8080/Example/Query';
+const path = 'http://powersupply.taipower.com.tw:8080/Example/app/Query';
 //const path = 'http://localhost:8080/Example/Query';
 
 var did="";
