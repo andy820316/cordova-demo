@@ -50,10 +50,6 @@ $("[name^=region]").bind("change",function(){
 	
 });
 
-//$(window).bind("load",function(){
-//	init();
-//});
-
 $(document).bind("deviceready", onDeviceReady);
 
 function onDeviceReady() {

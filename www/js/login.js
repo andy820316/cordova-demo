@@ -30,7 +30,7 @@ function logout(){
     '是否要登出？',
     function(){
 
-    window.plugins.nativepagetransitions.slide({"href" : "index_mod.html"});      
+    window.plugins.nativepagetransitions.slide({"href" : "index.html"});      
     SessionStorage.clear;
     },
     'Log Out?',
