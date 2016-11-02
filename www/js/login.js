@@ -14,7 +14,10 @@ var username = document.getElementById('lg_username').value;
             success: function(result){
               if(result != "incorrect"){
                 window.location = "index_mod.html";
-                sessionStorage.setItem("sys_region", result);
+                obj = JSON.parse(result);
+                obj.region
+                sessionStorage.setItem("sys_region", obj.region);
+                sessionStorage.setItem("Access", obj.Access);
                 return true;
               }else {
                 navigator.notification.alert("登入失敗",function(){},"登入資料有誤","OK");
