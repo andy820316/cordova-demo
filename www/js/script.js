@@ -9,6 +9,7 @@ var session = null;
 var sysregion = '台北';
 const path = 'http://powersupply.taipower.com.tw:8080/Example/app/Query';
 
+
 var did="";
 
 $(document).bind("mobileinit", function(){
