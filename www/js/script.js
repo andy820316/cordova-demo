@@ -52,7 +52,7 @@ function getData(){
 		if (!cancel){
 			returnPage('搜尋時間過長,請縮小搜尋範圍');
 		}
-	},30000);
+	},60000);
 
     $.ajax({
         url: path,
