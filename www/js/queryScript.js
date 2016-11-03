@@ -58,12 +58,18 @@ function onDeviceReady() {
 
 function init(){
 	updateSysRegion();
-
+	var qt = $.url.param('qt');
+	
 	try{
 		did = device.uuid;
 	}catch(err){}
 	
 	$("#sysRegion").html(sysregion);
+	
+	var jt = '{"N000C":"複合式搜尋","N000D":"依起訖時間搜尋","P000A":"變電所名稱歷史查詢","P000B":"線路名稱歷史查詢","L000A":"線路負載率查詢","L000B":"變壓器負載率查詢","C000A":"複合式查詢","C000B":"三日內69kV以上異常查詢"}';
+	var qto = JSON.parse(jt);
+	$("#qt").html(qto[searchparam]);
+	
 	menuUpdate();
 }
 
@@ -111,6 +117,9 @@ function menuUpdate(){
     $('[name=region]').val('');
     $('[name=location]').val('');
     $('[name=line]').val('');
+    $('[name=keyword]').val('');
+    
+    $(document).scrollTop();
 }
 
 function updateLocList(selected) {

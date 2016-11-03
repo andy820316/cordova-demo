@@ -26,6 +26,8 @@ function sessionkey(){
 }
 
 function getData(){
+	$('#spinDiv').show();
+	
     var allparams = $.url.paramAll();
     updateSysRegion()
     $.each(allparams, function(k,v){
@@ -45,6 +47,13 @@ function getData(){
     
     if (selectparam.length) viewId = selectparam;
     
+    var cancel = false;
+	setTimeout(function(){
+		if (!cancel){
+			returnPage('搜尋時間過長,請縮小搜尋範圍');
+		}
+	},15000);
+
     $.ajax({
         url: path,
         data: {"criteria":paramStr,"did":did},
@@ -52,9 +61,36 @@ function getData(){
         success: function(result){
             storevalue(result);
             nodeProcess();
+            
+            $('#spinDiv').hide();
+            cancel = true;
+        },
+        statusCode: {
+            404: function() {
+              returnPage('搜尋錯誤');
+            },
+            500: function() {
+              returnPage('搜尋錯誤');
+            }
         }
 
     });
+    
+}
+
+function returnPage(txt){
+	var typeparam = $.url.param('type');
+	var sid = $.url.param('sid');
+	var searchparam = $.url.param('tid');
+	var pt = "querytest.html?"+"type="+typeparam+"&search="+searchparam+"&sid="+sid;
+	
+	navigator.notification.confirm(
+	    '',
+		function(){
+		    $('#spinDiv').hide();
+		},
+		txt,
+		['取消']);
 }
 
 function nodedata(currentdocument){
@@ -98,7 +134,6 @@ function nodeProcess() {
 }
 function remove(){
     while(displaycount > 0){
-        console.log(tempindex);
         var name = 'result' + tempindex;
         var para = document.getElementById(name);
             para.parentNode.removeChild(para);
@@ -109,7 +144,6 @@ function remove(){
 
 function redirto(page){
 	try{
-        console.log(navigator.oscpu);
 		window.plugins.nativepagetransitions.slide({"href" : page });
 	} catch(err) {
 		window.location = page;
@@ -148,4 +182,3 @@ function updateSysRegion(){
         sysregion = def;
     }
 }
-
