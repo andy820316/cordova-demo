@@ -66,6 +66,11 @@ function getData(){
             cancel = true;
         },
         statusCode: {
+        	403: function() {
+        	    SessionStorage.clear;
+                navigator.notification.alert('使用者未登入');
+        	    window.plugins.nativepagetransitions.slide({"href" : "index.html"});      
+        	},
             404: function() {
               returnPage('搜尋錯誤');
             },
