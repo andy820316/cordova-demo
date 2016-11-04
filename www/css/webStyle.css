@@ -210,7 +210,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	text-align:left;
 	font-size:14pt;
 	letter-spacing:1px;
-	background-color:#fff;
+	background-color:none;
+	-webkit-appearance: none;
+	background: none;
 	}
 .tp-inupt-key-word-01{
 	width:calc(100% - 90px);
@@ -229,6 +231,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	text-align:left;
 	font-size:14pt;
 	letter-spacing:1px;
+	background: transparent;
+	border-top-left-radius: none;
+border-top-right-radius: none;
+border-bottom-right-radius: none;
+border-bottom-left-radius: none;
 	}
 .tp-search-list-icon-01{
 	border-radius:50%;
@@ -293,7 +300,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', end
 	border-bottom:1px dashed #EFEFEF;font-weight:normal;
 	}
 .tp-result-item{
-	width:108px;
+	width:112px;
 	text-align:right;
 	font-size:12pt;
 	color:#2F8AC1;
