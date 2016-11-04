@@ -52,7 +52,7 @@ function getData(){
 		if (!cancel){
 			returnPage('搜尋時間過長,請縮小搜尋範圍');
 		}
-	},15000);
+	},60000);
 
     $.ajax({
         url: path,
@@ -104,7 +104,9 @@ function nodedata(currentdocument){
 }
 
 function nodeProcess() {
-    $.template('n001','<div><h2 class="tp-result-unit-name">訊息類型 : ${message_type}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">發生時間</span><span class="tp-result-conten">${ae_date}</span></li><li><span class="tp-result-item">位置</span><span class="tp-result-conten">${ae_grp_name}</span></li><li><span class="tp-result-item">電壓等級</span><span class="tp-result-conten">${voltage}</span></li><li><span class="tp-result-item">設備</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">敘述</span><span class="tp-result-conten">${ae_alm_text}</span></li></ul></div>');
+//    $.template('n001','<div><h2 class="tp-result-unit-name">訊息類型 : ${message_type}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">發生時間</span><span class="tp-result-conten">${ae_date}</span></li><li><span class="tp-result-item">位置</span><span class="tp-result-conten">${ae_grp_name}</span></li><li><span class="tp-result-item">電壓等級</span><span class="tp-result-conten">${voltage}</span></li><li><span class="tp-result-item">設備</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">敘述</span><span class="tp-result-conten">${ae_alm_text}</span></li></ul></div>');
+    $.template('n001','<div><h2 class="tp-result-unit-name">訊息類型 : ${message_type}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">發生時間</span><span class="tp-result-conten">${ae_date}</span></li><li><span class="tp-result-item">位置</span><span class="tp-result-conten">${ae_grp_name}</span></li>{{if voltage === ""}}{{else}}<li><span class="tp-result-item">電壓等級</span><span class="tp-result-conten">${voltage}</span></li>{{/if}}<li><span class="tp-result-item">設備</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">敘述</span><span class="tp-result-conten">${ae_alm_text}</span></li></ul></div>');
+    
     $.template('p001','<div><h2 class="tp-result-unit-name">${title} ${equipment}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">設備編號</span><span class="tp-result-conten">${equipment}</span></li><li><span class="tp-result-item">日期時間</span><span class="tp-result-conten">${timeDate}</span></li><li><span class="tp-result-item">運轉值</span><span class="tp-result-conten"><font color = "${color}">${value}</font></span></li><li><span class="tp-result-item">狀態</span><span class="tp-result-conten"><font color = "${color}">${status}</font></span></li><li><span class="tp-result-item">基準值上限/下限</span><span class="tp-result-conten">${max} / ${min}</span></li></ul></div>');
     $.template('c001','<div><h2 class="tp-result-unit-name">變電所/裝置 : ${Place}</h2><ul class="tp-result-unit-pool"><li><span class="tp-result-item">日期時間</span><span class="tp-result-conten">${Date}</span></li><li><span class="tp-result-item">類型</span><span class="tp-result-conten">${Type}</span></li><li><span class="tp-result-item">動作時間</span><span class="tp-result-conten"><font color ="${color}">${dur} ms</font></span></li><li><span class="tp-result-item">基準值/偏差值</span><span class="tp-result-conten">${base} ms/<font color ="${color}"> ${bias} ms</font></span></li></ul></div>');
 	
