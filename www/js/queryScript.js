@@ -26,12 +26,11 @@ if (sid.length){
 
 //custom
 $("#dtp_confirm").bind("click",function(){
-
-	$('[name^=keyword]').each(function(){
-		var temp = this.value;
-		$(this).val(encodeURIComponent(temp));
-	});
 	
+	$('[name^=dummykey]').each(function(){
+		var temp = $(this).parent().next();
+		$(temp).val(encodeURIComponent(this.value));
+	});
 });
 $("#dtp_cancel").bind("click",function(){
 	redirback();
@@ -118,7 +117,8 @@ function menuUpdate(){
     $('[name=region]').val('');
     $('[name=location]').val('');
     $('[name=line]').val('');
-    $('[name=keyword]').val('');
+    $('[name=msgId]').val('');
+    $('[name=dummykey]').val('');
     
     $(document).scrollTop();
 }
@@ -187,8 +187,10 @@ function keywordAdd(el){
 
 	console.log(keycount);
 	
+	$(cloneEl).find('[name^=dummykey]').val("");
 	$(cloneEl).find('[name^=keyword]').val("");
 	
+	$(cloneEl).find('[name^=dummykey]')[0].name = "dummykey"+keycount;
 	$(cloneEl).find('[name^=keyword]')[0].name = "keyword"+keycount;
 	$(cloneEl).insertAfter(parent1);
 }
