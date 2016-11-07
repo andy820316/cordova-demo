@@ -29,10 +29,11 @@ sessionStorage.setItem("Username",username);
 function logout(){
   navigator.notification.confirm(
     '是否要登出？',
-    function(){
-
-    window.plugins.nativepagetransitions.slide({"href" : "index.html"});      
-    SessionStorage.clear;
+    function(index){
+    	if (index === 1){
+		    window.plugins.nativepagetransitions.slide({"href" : "index.html"});      
+		    SessionStorage.clear;
+    	}
     },
     'Log Out?',
     ['登出','取消']);
