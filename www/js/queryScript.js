@@ -28,7 +28,8 @@ if (sid.length){
 $("#dtp_confirm").bind("click",function(){
 
 	$('[name^=keyword]').each(function(){
-		$(this).val(encodeURIComponent(this.value));
+		var temp = this.value;
+		$(this).val(encodeURIComponent(temp));
 	});
 	
 });
