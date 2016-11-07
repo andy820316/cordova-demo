@@ -184,13 +184,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	margin-left:30px;
 	}
 .tp-content-search-pool{
-	/*padding:5px;*/
 	margin-top:0px;
 	
 	}
 .tp-content-search-pool li{
 	border-top:1px solid #EAEAEA;
-	padding:10px 0px 10px 15px;
+	padding:10px 10px 10px 15px;
 	margin-top:5px;
 	text-align:center;
 	}
@@ -206,6 +205,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .tp-inupt-text-01{
 	width:calc(100% - 90px);
 	border:none;
+	height:50px;
+	color:#666;
+	text-align:left;
+	font-size:14pt;
+	letter-spacing:1px;
+	background-color:#fff;
+	}
+.tp-inupt-key-word-01{
+	width:calc(100% - 90px);
+	border:1px solid #EAEAEA;
 	height:50px;
 	color:#666;
 	text-align:left;
@@ -229,6 +238,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-size:26pt;
 	font-weight:bold;
 	margin:0px 5px 15px 5px;
+	border:none;
 	}
 .tp-search-list-add{
 	background-color:#F40606;
@@ -241,9 +251,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	}
 .tp-search-cancel-confirm-pool{
 	position:relative;
-	text-align:center;}
+	text-align:center;
+	margin-bottom:30px;}
 .tp-search-cancel , .tp-search-confirm{
 	text-align:center;
+	border:none;
 	border-radius:5px;
 	background-color:#2086C4;
 	color:#fff;
@@ -257,11 +269,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .tp-result-pool > li{
 	width:calc(100% - 20px);
 	padding:8px 5px 5px 5px;
-	margin:3px 5px;
+	margin:15px 5px;
 	color:#666;
 	letter-spacing:1px;
 	box-shadow:0px 0px 3px rgba(20%,20%,40%,0.5);
 	vertical-align:middle;
+	background: rgb(145,232,66); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(145,232,66,1) 1%, rgba(255,255,255,1) 1%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(145,232,66,1) 1%,rgba(255,255,255,1) 1%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(145,232,66,1) 1%,rgba(255,255,255,1) 1%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 	}
 .tp-result-unit-name{
 	font-size:24px;

@@ -30,35 +30,44 @@
         <h3 class="tp-content-h3">設定搜尋條件 - <span id="sysRegion"></span></h3>
         <form action="result.html">
             <ul class="tp-content-search-pool">
-                <li class="groupitemCustom N000D">
+                <li class="groupitemCustom N000C N000D C000A P000A P000B">
                     <span class="tp-search-item">日期起</span>
                     <label><input type="date" name="startdate" class="tp-inupt-text-01 tp-inupt-date"></label>
                 </li>
-                <li class="groupitemCustom N000D">
+                <li class="groupitemCustom N000C N000D C000A P000A P000B">
                     <span class="tp-search-item">時間起</span>
                     <label><input type="time" name="starttime" class="tp-inupt-text-01 tp-inupt-time"></label>
                 </li>
-                <li class="groupitemCustom N000D">
+                <li class="groupitemCustom N000C N000D C000A P000A P000B">
                     <span class="tp-search-item">日期迄</span>
                     <label><input type="date" name="enddate" class="tp-inupt-text-01 tp-inupt-date"></label>
                 </li>
-                <li class="groupitemCustom N000D">
+                <li class="groupitemCustom N000C N000D C000A P000A P000B">
                     <span class="tp-search-item">時間迄</span>
                     <label><input type="time" name="endtime" class="tp-inupt-text-01 tp-inupt-time"></label>
                 </li>
-                <li class="groupitemCustom N000A N000B C000A N000E">
+                <li class="groupitemCustom N000A N000B N000C C000A  N000E P000A P000B">
                     <span class="tp-search-item">轄區</span>
                     <select name="region" class="tp-select-01">
                             <option value=''>請選擇</option>
                     </select>
                 </li>
-                <li class="groupitemCustom N000A N000B N000E C000A">
+                
+                <li class="groupitemCustom N000A N000B N000C C000A N000E  P000A ">
                     <span class="tp-search-item">變電所</span>
                     <select name="location" class="tp-select-01">
                             <option value=''>請選擇</option>
                     </select>
                 </li>
-                <li class="groupitemCustom N000F">
+                
+                <li class="groupitemCustom P000B">
+                    <span class="tp-search-item">線路</span>
+                    <select name="line" class="tp-select-01">
+                         <option value=''>請選擇</option>
+                    </select>
+                </li>
+                
+                <li class="groupitemCustom N000C C000A N000F">
                     <span class="tp-search-item">訊息類型</span>
                     <select name="msgId" class="tp-select-01">
                             <option value=''>請選擇</option>
@@ -66,14 +75,15 @@
 						    <option value='2'>SOE</option>
                     </select>
                 </li>
-                <li class="groupitemCustom key N000G">
+                <li class="groupitemCustom key N000C C000A N000G">
                     <span class="tp-search-item">關鍵字</span>
                     <label><input type="text" name="keyword" class="tp-inupt-text-01"></label>
                 </li>
-                <li class="groupitemCustom N000G">
+                <li class="groupitemCustom N000C C000A N000G">
                 	<input type="button" class="tp-search-list-icon-01 tp-search-list-add" title="+" value="+" onclick="javascript:keywordAdd(this)">
                     <input type="button" class="tp-search-list-icon-01 tp-search-list-cut" title="-" value="-" onclick="javascript:keywordRemove(this)">
                 </li>
+                
             </ul>
             <div class="tp-search-cancel-confirm-pool">
             	<input type="button" id="dtp_cancel" class="tp-search-cancel" value="取消">
