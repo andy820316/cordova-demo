@@ -3,7 +3,17 @@
 }
 
 .tp-select-custom01{
-	margin-left: 10%;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	width: 60%;
+	border:none;
+	background-color:#fff;
+	padding:2px 3px;
+	color:#333;
+	font-size:14pt;
+	height:30px;
+	margin:5px 0px 3px 0px;
 }
 
 
