@@ -225,7 +225,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	}
 .tp-select-01{
 	width:calc(100% - 90px);
-	border:none;
 	height:50px;
 	color:#666;
 	text-align:left;
