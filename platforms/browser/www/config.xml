@@ -3,7 +3,7 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>供電單位行動查詢</name>
+    <name>行動查詢App</name>
     <description>A sample Apache Cordova application that responds to the deviceready event.</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team

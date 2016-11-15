@@ -36,6 +36,7 @@ function getData(){
 
     allparams.region = decodeURIComponent(allparams.region);
     allparams.location = decodeURIComponent(allparams.location);
+    allparams.line = decodeURIComponent(allparams.line);
     var typeparam = $.url.param('type');
     var selectparam = $.url.param('sid');
     var jparams = JSON.stringify(allparams);

@@ -26,7 +26,7 @@ if (sid.length){
 
 //custom
 $("#dtp_confirm").bind("click",function(){
-	
+
 	$('[name^=dummykey]').each(function(){
 		var temp = $(this).parent().next();
 		$(temp).val(encodeURIComponent(this.value));

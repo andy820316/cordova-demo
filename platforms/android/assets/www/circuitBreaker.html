@@ -24,14 +24,14 @@
     
 	    <!-- header -->
 	    <header class="tp-header">
-			<a href="javascript:history.back()" class="tp-header-go-prev" title="上一頁"></a>
+			<div class="tp-header-go-prev" title="上一頁" onclick="redirback()"></div>
 	    	<h1 class="tp-header-name">供電單位行動查詢APP</h1>
 	    </header>
 	    
 	    <!-- content -->
 	    <div class="tp-container">
-	    	<a href="#" class="nav-icon nav03-sub-icon"><span class="nav03-icon-img"></span>複合式查詢</a>
-	        <a href="#" class="nav-icon nav03-sub-icon"><span class="nav03-icon-img"></span>三日內69kV以上異常查詢</a>
+	    	<div class="nav-icon nav03-sub-icon" onclick="redirto('querytest.html?search=C000A&type=circuitbreaker&sid=c001')"><span class="nav03-icon-img"></span>複合式查詢</div>
+	        <div class="nav-icon nav03-sub-icon" onclick="redirto('result.html?search=C000B&type=circuitbreaker&sid=c001')"><span class="nav03-icon-img"></span>三日內69kV以上異常查詢</div>
 	    </div>
     
 	    <script type="text/javascript" src="js/queryScript.js"></script>
