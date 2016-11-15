@@ -333,10 +333,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', end
 	}
 .tp-result-page-item .tp-result-page-link{
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:14px;
+	font-size:40px;
 	color:#587696;
-	border-right:1px solid #999999;
-	padding-right:5px;
+	padding-right:20px;
 	vertical-align:middle;
 	}
 .tp-result-page-link:hover{
