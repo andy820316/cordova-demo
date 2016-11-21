@@ -60,14 +60,16 @@ body{
 	color:#fff;
 	}
 .tp-header{
-	position:relative;
-	background: url(../images/header_img.png) no-repeat center top;
-	background: url(../images/header_img.svg) no-repeat center top , none;
+	position:fixed;
+	top:0px;
+	background:#fff url(../images/header_img.png) no-repeat center top;
+	background:#fff url(../images/header_img.svg) no-repeat center top , none;
 	height:50px;
 	width:100vw;
 	border-bottom:1px solid #ccc;
 	box-shadow:0px 1px 14px -2px rgba(20%,20%,40%,0.5);
 	margin-bottom:5px;
+	z-index:9999;
 	}
 .tp-header-go-prev{
 	width:60px;
@@ -83,11 +85,24 @@ body{
 	text-align:center;
 	color:#0178c6;
 	display:none;
+	} 
+.tp-footer{
+	position:fixed;
+	bottom:0px;
+	height:50px;
+	width:100vw;
+	margin-top:5px;
+	padding-top:10px;
+	z-index:9999;	
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.31) 7%, rgba(255,255,255,0.54) 15%, rgba(255,255,255,0.77) 23%, rgba(255,255,255,0.8) 32%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 64%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.31) 7%,rgba(255,255,255,0.54) 15%,rgba(255,255,255,0.77) 23%,rgba(255,255,255,0.8) 32%,rgba(255,255,255,1) 43%,rgba(255,255,255,1) 64%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.31) 7%,rgba(255,255,255,0.54) 15%,rgba(255,255,255,0.77) 23%,rgba(255,255,255,0.8) 32%,rgba(255,255,255,1) 43%,rgba(255,255,255,1) 64%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	}
 .tp-container{
 	position:relative;
-
-	/*padding:5px;*/
+	margin-top:55px;
+	margin-bottom:40px;
 	}
 .nav-icon{
 	width:calc(100% - 20px);
@@ -225,6 +240,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	}
 .tp-select-01{
 	width:calc(100% - 90px);
+	border:none;
 	height:50px;
 	color:#666;
 	text-align:left;
@@ -333,9 +349,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', end
 	}
 .tp-result-page-item .tp-result-page-link{
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:40px;
-	color:#587696;
-	padding-right:20px;
+	font-size:14pt;
+	color:#429eca;
+	border-right:1px solid #999999;
+	padding:0px 10px 0px 10px;
 	vertical-align:middle;
 	}
 .tp-result-page-link:hover{

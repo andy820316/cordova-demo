@@ -21,27 +21,23 @@
 
 
 	</head>
-	<body>
-	
-    <div class="tp-container">
-	    <!-- header -->
-	    <header class="tp-header">
+			<header class="tp-header">
 	    	<div class="tp-header-go-prev" title="上一頁" onclick="redirback()"></div>
 	    	<h1 class="tp-header-name">供電單位行動查詢APP</h1>
 	    </header>
-    
+
+	<body>
+    <div class="tp-container">
+	    <!-- header -->    
     	<ul class="tp-result-pool" id="results">
         </ul>
-
-		<footer>
-	        <ol class="tp-result-page-list" >
-	           <li id="tp-result-page-go-prev" class="tp-result-page-item" onclick="Previous()"><span class="tp-result-page-link" title="上一頁">上一頁</span></li>
-	           <li class="tp-result-page-item tp-result-page-current" id="footertext"></li>
-	           <li id="tp-result-page-go-next" class="tp-result-page-item" onclick="Next()"><span class="tp-result-page-link" title="下一頁">下一頁</span></li>
-	        </ol>
-		</footer>
     </div>
+    	<footer class="tp-footer">
+    	<ol class="tp-result-page-list" id="navLinks">
+
+                </ol>
     
+    </footer>
     <div class="spinContainer" id="spinDiv">
     <div class="spinner">
 	  <div class="double-bounce1"></div>
