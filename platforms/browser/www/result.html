@@ -9,8 +9,6 @@
 	    <link rel="stylesheet" href="css/webStyle.css">
 	    <link rel="stylesheet" type="text/css" media="screen and (max-width:768px)"  href="css/padStyle.css">
 	    <link rel="stylesheet" type="text/css" media="screen and (max-width:480px)" href="css/phoneStyle.css">
-	    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<!-- 	    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
 
     	<link rel="stylesheet" href="css/style.css">
     	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -37,12 +35,19 @@
 
 		<footer>
 	        <ol class="tp-result-page-list" >
-	           <li id="tp-result-page-go-prev" class="tp-result-page-item" ><span class="tp-result-page-link" title="上一頁" onclick="Previous()">上一頁</span></li>
-	           <li class="tp-result-page-item tp-result-page-current" id="footertext">Display Current</li>
-	           <li id="tp-result-page-go-next" class="tp-result-page-item" ><span class="tp-result-page-link" title="下一頁" onclick="Next()">下一頁</span></li>
+	           <li id="tp-result-page-go-prev" class="tp-result-page-item" onclick="Previous()"><span class="tp-result-page-link" title="上一頁">上一頁</span></li>
+	           <li class="tp-result-page-item tp-result-page-current" id="footertext"></li>
+	           <li id="tp-result-page-go-next" class="tp-result-page-item" onclick="Next()"><span class="tp-result-page-link" title="下一頁">下一頁</span></li>
 	        </ol>
 		</footer>
     </div>
+    
+    <div class="spinContainer" id="spinDiv">
+    <div class="spinner">
+	  <div class="double-bounce1"></div>
+	  <div class="double-bounce2"></div>
+    </div>
+	</div>
 	
     <script type="text/javascript" src="cordova.js"></script>
     </body>

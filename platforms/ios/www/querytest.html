@@ -28,7 +28,7 @@
     <div class="tp-container">
     	<h2 class="tp-content-h2">複合式查詢</h2>
         <h3 class="tp-content-h3">設定搜尋條件 - <span id="sysRegion"></span></h3>
-        <form action="result.html">
+        <form id="qform" action="result.html">
             <ul class="tp-content-search-pool">
                 <li class="groupitemCustom N000C N000D C000A P000A P000B">
                     <span class="tp-search-item">日期起</span>
@@ -46,14 +46,14 @@
                     <span class="tp-search-item">時間迄</span>
                     <label><input type="time" name="endtime" class="tp-inupt-text-01 tp-inupt-time"></label>
                 </li>
-                <li class="groupitemCustom N000A N000B N000C C000A C000A N000E P000A P000B">
+                <li class="groupitemCustom N000A N000B N000C C000A  N000E P000A P000B">
                     <span class="tp-search-item">轄區</span>
                     <select name="region" class="tp-select-01">
                             <option value=''>請選擇</option>
                     </select>
                 </li>
                 
-                <li class="groupitemCustom N000A N000B N000C C000A N000E C000A P000A ">
+                <li class="groupitemCustom N000A N000B N000C C000A N000E  P000A ">
                     <span class="tp-search-item">變電所</span>
                     <select name="location" class="tp-select-01">
                             <option value=''>請選擇</option>
@@ -77,7 +77,8 @@
                 </li>
                 <li class="groupitemCustom key N000C C000A N000G">
                     <span class="tp-search-item">關鍵字</span>
-                    <label><input type="text" name="keyword" class="tp-inupt-text-01"></label>
+                    <label><input type="text" name="dummykey" class="tp-inupt-text-01 tp-inupt-key-word-01" /></label>
+                    <input type="hidden" name="keyword" value="" />
                 </li>
                 <li class="groupitemCustom N000C C000A N000G">
                 	<input type="button" class="tp-search-list-icon-01 tp-search-list-add" title="+" value="+" onclick="javascript:keywordAdd(this)">
