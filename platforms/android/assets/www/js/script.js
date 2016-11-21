@@ -19,6 +19,7 @@ $(document).bind("mobileinit", function(){
 function storevalue(value){
     myList = value;
     total_results = value.length;
+    genPagenavs();
     sessionkey();
 };
 function sessionkey(){
@@ -123,7 +124,6 @@ function nodeProcess() {
         var para = document.createElement("li");
         var name = 'result'+index;
         para.id = name;
-//        para.className = "well";
 
         para.appendChild(tnodes[index]);
         var results = document.getElementById("results");
@@ -138,7 +138,6 @@ function nodeProcess() {
         results.innerHTML = "<center><font size= '10'>查無資料</font></center>";
     }
 
-    document.getElementById("footertext").innerHTML = "" + (index-displaycount+1) + " to " + (index) +" , total: " +total_results;  
 }
 function remove(){
     while(displaycount > 0){
@@ -177,6 +176,58 @@ function Next(){
         nodeProcess();
     }
 }
+
+
+function genPagenavs(){
+	$('#navLinks').html('');
+	
+	console.log('div: '+total_results);
+	console.log('mod: '+total_results % 20);
+	
+	if (total_results >= 20){
+		if (total_results / 20 >= 0)
+		   	 $('#navLinks').append($('<li class="tp-result-page-item" onclick="First()"><span class="tp-result-page-link" title="第一頁">1</span></li>'));
+		if (total_results / 20 > 1)
+		   	 $('#navLinks').append($('<li class="tp-result-page-item" onclick="Second()"><span class="tp-result-page-link" title="第二頁">2</span></li>'));
+		if (total_results / 20 > 2)
+		   	 $('#navLinks').append($('<li class="tp-result-page-item" onclick="Third()"><span class="tp-result-page-link" title="第三頁">3</span></li>'));
+		if (total_results / 20 > 3)
+		   	 $('#navLinks').append($('<li class="tp-result-page-item" onclick="Fourth()"><span class="tp-result-page-link" title="第四頁">4</span></li>'));
+		if (total_results / 20 > 4)
+		   	 $('#navLinks').append($('<li class="tp-result-page-item" onclick="Fifth()"><span class="tp-result-page-link" title="第五頁">5</span></li>'));
+	}
+}
+
+function page(ind){
+	remove();
+	index = ind;
+	nodeProcess();
+}
+
+function Fifth(){
+    remove();
+    index = 80;
+    nodeProcess();
+}
+
+function Fourth(){
+    remove();
+    index = 60;
+    nodeProcess();
+}
+
+function Third(){
+    remove();
+    index = 40;
+    nodeProcess();
+}
+
+function Second(){
+    remove();
+    index = 20;
+    nodeProcess();
+}
+
 function First(){
     remove();
     index = 0;
